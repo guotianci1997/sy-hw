@@ -1,6 +1,8 @@
 <template>
     <div class="home-content">
-        <div class="home-head"></div>
+        <div class="home-head">
+            <div class="home-head-search"></div>
+        </div>
         <div class="home-mid"></div>
     </div>
 </template>
@@ -24,12 +26,17 @@ export default {
 .home-head{
     height: 410px;
     width: 100%;
-    background-color: wheat;
+    /* background-color: wheat; */
 }
 
 .home-mid{
     height: 850px;
     width: 100%;
     background-color: blueviolet;
+}
+
+.home-head-search{
+    width: 100%;
+    height: 46px;
 }
 </style>
