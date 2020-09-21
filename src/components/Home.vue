@@ -1,7 +1,9 @@
 <template>
     <div class="home-content">
         <div class="home-head"></div>
-        <div class="home-mid"></div>
+        <div class="home-mid">
+            
+        </div>
     </div>
 </template>
 
@@ -30,6 +32,6 @@ export default {
 .home-mid{
     height: 850px;
     width: 100%;
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
 }
 </style>
