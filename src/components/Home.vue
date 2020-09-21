@@ -1,5 +1,8 @@
 <template>
-    <div>首页</div>
+    <div class="home-content">
+        <div class="home-head"></div>
+        <div class="home-mid"></div>
+    </div>
 </template>
 
 <script>
@@ -12,5 +15,21 @@ export default {
 </script>
 
 <style scoped>
+.home-content{
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
 
+.home-head{
+    height: 410px;
+    width: 100%;
+    background-color: wheat;
+}
+
+.home-mid{
+    height: 850px;
+    width: 100%;
+    background-color: blueviolet;
+}
 </style>
