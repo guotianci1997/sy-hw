@@ -1,135 +1,5 @@
 <template>
   <div class="home-content">
-<<<<<<< HEAD
-    <div class="home-head">
-      <div class="home-head-search"></div>
-    </div>
-    <div class="home-mid">
-      <div class="home-mid-tab">
-        <div class="home-mid-tab2">
-          <div class="home-mid-slide">
-            <p class="home-mid-img">
-              <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
-            </p>
-            <p class="home-mid-title">MatePad5G</p>
-          </div>
-          <p class="home-mid-price">预定立省100元</p>
-        </div>
-        <div class="home-mid-tab2">
-          <div class="home-mid-slide">
-            <p class="home-mid-img">
-              <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
-            </p>
-            <p class="home-mid-title">MatePad5G</p>
-          </div>
-          <p class="home-mid-price">预定立省100元</p>
-        </div>
-         <div class="home-mid-tab2">
-          <div class="home-mid-slide">
-            <p class="home-mid-img">
-              <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
-            </p>
-            <p class="home-mid-title">MatePad5G</p>
-          </div>
-          <p class="home-mid-price">预定立省100元</p>
-        </div>
-         <div class="home-mid-tab2">
-          <div class="home-mid-slide">
-            <p class="home-mid-img">
-              <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
-            </p>
-            <p class="home-mid-title">MatePad5G</p>
-          </div>
-          <p class="home-mid-price">预定立省100元</p>
-        </div>
-         <div class="home-mid-tab2">
-          <div class="home-mid-slide">
-            <p class="home-mid-img">
-              <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
-            </p>
-            <p class="home-mid-title">MatePad5G</p>
-          </div>
-          <p class="home-mid-price">预定立省100元</p>
-        </div>
-         <div class="home-mid-tab2">
-          <div class="home-mid-slide">
-            <p class="home-mid-img">
-              <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
-            </p>
-            <p class="home-mid-title">MatePad5G</p>
-          </div>
-          <p class="home-mid-price">预定立省100元</p>
-        </div>
-         <div class="home-mid-tab2">
-          <div class="home-mid-slide">
-            <p class="home-mid-img">
-              <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
-            </p>
-            <p class="home-mid-title">MatePad5G</p>
-          </div>
-          <p class="home-mid-price">预定立省100元</p>
-        </div>
-         <div class="home-mid-tab2">
-          <div class="home-mid-slide">
-            <p class="home-mid-img">
-              <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
-            </p>
-            <p class="home-mid-title">MatePad5G</p>
-          </div>
-          <p class="home-mid-price">预定立省100元</p>
-        </div>
-         <div class="home-mid-tab2">
-          <div class="home-mid-slide">
-            <p class="home-mid-img">
-              <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
-            </p>
-            <p class="home-mid-title">MatePad5G</p>
-          </div>
-          <p class="home-mid-price">预定立省100元</p>
-        </div>
-         <div class="home-mid-tab2">
-          <div class="home-mid-slide">
-            <p class="home-mid-img">
-              <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
-            </p>
-            <p class="home-mid-title">MatePad5G</p>
-          </div>
-          <p class="home-mid-price">预定立省100元</p>
-        </div>
-         <div class="home-mid-tab2">
-          <div class="home-mid-slide">
-            <p class="home-mid-img">
-              <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
-            </p>
-            <p class="home-mid-title">MatePad5G</p>
-          </div>
-          <p class="home-mid-price">预定立省100元</p>
-        </div>
-         <div class="home-mid-tab2">
-          <div class="home-mid-slide">
-            <p class="home-mid-img">
-              <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
-            </p>
-            <p class="home-mid-title">MatePad5G</p>
-          </div>
-          <p class="home-mid-price">预定立省100元</p>
-        </div>
-      </div>
-    </div>
-    <div class="home-mid-content">
-      <ul class="home-mid-ul">
-        <li class="home-mid-li1">
-          <div class="home-mid-li1-img">
-            <img src="" alt="">
-          </div>
-        </li>
-        <li class="home-mid-li2">
-          <div></div>
-          <div></div>
-        </li>
-      </ul>
-    </div>
-=======
     <div class="home-head-fixed">
       <div class="home-head-search">
         <div class="home-head-search-left">
@@ -265,11 +135,241 @@
       <div class="home-head-sale">
         <span style="color:#4d4d4d;fontSize:20px;marginRight:5px">限时购</span>
         <span class="sale-icon"></span>
-        <span style="color:#4d4d4d;fontSize:20px;marginLeft:5px">{{hou}}:{{min}}:{{sec}}</span>
+        <span style="color:#4d4d4d;fontSize:20px;marginRight:5px">{{hou}}:{{min}}:{{sec}}</span>
       </div>
     </div>
-    <div class="home-mid"></div>
->>>>>>> 1ae133253bb3ac7d2a61115c9762bf3da5c85a77
+    <div class="home-mid">
+      <div class="home-mid-tab">
+        <div class="home-mid-tab2">
+          <div class="home-mid-slide">
+            <p class="home-mid-img">
+              <a href="#">
+                <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
+              </a>
+            </p>
+            <p class="home-mid-title">MatePad5G</p>
+          </div>
+          <p class="home-mid-price">预定立省100元</p>
+        </div>
+        <div class="home-mid-tab2">
+          <div class="home-mid-slide">
+            <p class="home-mid-img">
+              <a href="#">
+                <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
+              </a>
+            </p>
+            <p class="home-mid-title">MatePad5G</p>
+          </div>
+          <p class="home-mid-price">预定立省100元</p>
+        </div>
+        <div class="home-mid-tab2">
+          <div class="home-mid-slide">
+            <p class="home-mid-img">
+              <a href="#">
+                <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
+              </a>
+            </p>
+            <p class="home-mid-title">MatePad5G</p>
+          </div>
+          <p class="home-mid-price">预定立省100元</p>
+        </div>
+        <div class="home-mid-tab2">
+          <div class="home-mid-slide">
+            <p class="home-mid-img">
+              <a href="#">
+                <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
+              </a>
+            </p>
+            <p class="home-mid-title">MatePad5G</p>
+          </div>
+          <p class="home-mid-price">预定立省100元</p>
+        </div>
+        <div class="home-mid-tab2">
+          <div class="home-mid-slide">
+            <p class="home-mid-img">
+              <a href="#">
+                <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
+              </a>
+            </p>
+            <p class="home-mid-title">MatePad5G</p>
+          </div>
+          <p class="home-mid-price">预定立省100元</p>
+        </div>
+        <div class="home-mid-tab2">
+          <div class="home-mid-slide">
+            <p class="home-mid-img">
+              <a href="#">
+                <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
+              </a>
+            </p>
+            <p class="home-mid-title">MatePad5G</p>
+          </div>
+          <p class="home-mid-price">预定立省100元</p>
+        </div>
+        <div class="home-mid-tab2">
+          <div class="home-mid-slide">
+            <p class="home-mid-img">
+              <a href="#">
+                <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
+              </a>
+            </p>
+            <p class="home-mid-title">MatePad5G</p>
+          </div>
+          <p class="home-mid-price">预定立省100元</p>
+        </div>
+        <div class="home-mid-tab2">
+          <div class="home-mid-slide">
+            <p class="home-mid-img">
+              <a href="#">
+                <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
+              </a>
+            </p>
+            <p class="home-mid-title">MatePad5G</p>
+          </div>
+          <p class="home-mid-price">预定立省100元</p>
+        </div>
+        <div class="home-mid-tab2">
+          <div class="home-mid-slide">
+            <p class="home-mid-img">
+              <a href="#">
+                <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
+              </a>
+            </p>
+            <p class="home-mid-title">MatePad5G</p>
+          </div>
+          <p class="home-mid-price">预定立省100元</p>
+        </div>
+        <div class="home-mid-tab2">
+          <div class="home-mid-slide">
+            <p class="home-mid-img">
+              <a href="#">
+                <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
+              </a>
+            </p>
+            <p class="home-mid-title">MatePad5G</p>
+          </div>
+          <p class="home-mid-price">预定立省100元</p>
+        </div>
+        <div class="home-mid-tab2">
+          <div class="home-mid-slide">
+            <p class="home-mid-img">
+              <a href="#">
+                <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
+              </a>
+            </p>
+            <p class="home-mid-title">MatePad5G</p>
+          </div>
+          <p class="home-mid-price">预定立省100元</p>
+        </div>
+        <div class="home-mid-tab2">
+          <div class="home-mid-slide">
+            <p class="home-mid-img">
+              <a href="#">
+                <img src="../assets/Homeimg/home-mid-img1.png" alt class="img1" />
+              </a>
+            </p>
+            <p class="home-mid-title">MatePad5G</p>
+          </div>
+          <p class="home-mid-price">预定立省100元</p>
+        </div>
+      </div>
+    <div class="home-mid-content">
+      <ul class="home-mid-ul">
+        <li class="home-mid-li1">
+          <div class="home-mid-li1-img">
+            <a href="#">
+              <img src="../assets/Homeimg/home-mid-content-img1.png" alt />
+            </a>
+          </div>
+        </li>
+        <li class="home-mid-li2">
+          <div>
+            <a href="#">
+              <img
+                class="home-mid-content-img"
+                src="../assets/Homeimg/home-mid-content-img2.png"
+                alt
+              />
+            </a>
+          </div>
+          <div>
+            <a href="#">
+              <img
+                class="home-mid-content-img"
+                src="../assets/Homeimg/home-mid-content-img3.png"
+                alt
+              />
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="home-mid-content2">
+      <ul class="home-mid-ul2">
+        <li class="home-mid-li3">
+          <a href="#">
+            <img src="../assets/Homeimg/home-mid-content-img3.png" alt />
+          </a>
+        </li>
+        <li class="home-mid-li3">
+          <a href="#">
+            <img src="../assets/Homeimg/home-mid-content-img3.png" alt />
+          </a>
+        </li>
+      </ul>
+      <ul class="home-mid-ul2">
+        <li class="home-mid-li3">
+          <a href="#">
+            <img src="../assets/Homeimg/home-mid-content-img3.png" alt />
+          </a>
+        </li>
+        <li class="home-mid-li3">
+          <a href="#">
+            <img src="../assets/Homeimg/home-mid-content-img3.png" alt />
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="channel-floor-list3">
+      <ul class="home-mid-ul3">
+        <li class="home-mid-li4">
+          <div class="channel-floor-img">
+            <a href="#">
+              <img src="../assets/Homeimg/home-mid-content-img2.png" alt />
+            </a>
+          </div>
+          <p class="channel-floor-title">HUAWEI P40 5G</p>
+          <p class="channel-floor-data">享12期免息</p>
+          <p class="channel-floor-price">￥4488</p>
+        </li>
+        <li class="home-mid-li4">
+          <div class="channel-floor-img">
+            <a href="#">
+              <img src="../assets/Homeimg/home-mid-content-img2.png" alt />
+            </a>
+          </div>
+          <p class="channel-floor-title">荣耀Play4T Pro</p>
+          <p class="channel-floor-data">晒单抽好礼</p>
+          <p class="channel-floor-price">￥1446</p>
+        </li>
+        <li class="home-mid-li4">
+          <div class="channel-floor-img">
+            <a href="#">
+              <img src="../assets/Homeimg/home-mid-content-img2.png" alt />
+            </a>
+          </div>
+          <p class="channel-floor-title">HUAWEI nova 7 Pro 5G</p>
+          <p class="channel-floor-data">12期免息|限量赠好礼</p>
+          <p class="channel-floor-price">￥3699</p>
+        </li>
+      </ul>
+    </div>
+    <div class="goodsRecommend">
+      <div class="goodsRecommend-head">
+        <h2>精品推荐</h2>
+      </div>
+    </div>
+    </div>
   </div>
 </template>
 
@@ -277,9 +377,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 Vue.use(VueRouter);
-<<<<<<< HEAD
-export default {};
-=======
 export default {
   data() {
     return {
@@ -346,7 +443,6 @@ export default {
     this.swiper.slideTo(3, 1000, false);
   },
 };
->>>>>>> 1ae133253bb3ac7d2a61115c9762bf3da5c85a77
 </script>
 
 <style scoped>
@@ -356,17 +452,6 @@ export default {
   overflow: auto;
 }
 
-<<<<<<< HEAD
-.home-head {
-  height: 60%;
-  width: 100%;
-  background-color: wheat;
-}
-
-.home-mid {
-  width: 100%;
-  /* background-color: blueviolet; */
-=======
 .home-head-fixed {
   width: 100%;
   height: 80px;
@@ -376,50 +461,14 @@ export default {
 }
 
 .home-head {
-  height: 47.5%;
+  height: 52.5%;
   width: 100%;
   /* background-color: wheat; */
->>>>>>> 1ae133253bb3ac7d2a61115c9762bf3da5c85a77
 }
 
 .home-head-search {
   width: 100%;
   height: 46px;
-<<<<<<< HEAD
-}
-
-.home-mid-tab {
-  width: 100%;
-  height: 118px;
-  background-color: #fafafa;
-  display: flex;
-  overflow-x: auto;
-  overflow-x: none;
-}
-
-.home-mid-slide {
-  width: 87px;
-  height: 99px;
-  background-color: white;
-  border-radius: 15px;
-  margin-left: 10px;
-}
-
-.home-mid-img img {
-  width: 70px;
-  height: 70px;
-}
-
-.home-mid-title {
-  font-size: 12px;
-  color: #9d9d9d;
-}
-
-.home-mid-price {
-  font-size: 13px;
-  color: red;
-   margin-left: 7px;
-=======
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -462,7 +511,7 @@ export default {
 .home-mid {
   height: 100%;
   width: 100%;
-  background-color: blueviolet;
+  /* background-color: wheat; */
 }
 
 .home-head-select {
@@ -589,6 +638,7 @@ swiper-slide {
   height: 46px;
   text-align: center;
   line-height: 46px;
+  background-color: #fafafa;
 }
 
 .sale-icon {
@@ -597,6 +647,157 @@ swiper-slide {
   display: inline-block;
   background-image: url(../assets/Homeimg/sale.png);
   background-size: cover;
->>>>>>> 1ae133253bb3ac7d2a61115c9762bf3da5c85a77
 }
+
+.home-mid-tab {
+  width: 100%;
+  height: 118px;
+  background-color: #fafafa;
+  display: flex;
+  overflow: auto;
+  overflow-y: none;
+}
+
+.home-mid-slide {
+  width: 87px;
+  height: 99px;
+  background-color: white;
+  border-radius: 15px;
+  margin-left: 10px;
+}
+
+.home-mid-img img {
+  width: 70px;
+  height: 70px;
+}
+
+.home-mid-title {
+  font-size: 12px;
+  color: #9d9d9d;
+}
+
+.home-mid-price {
+  font-size: 13px;
+  color: red;
+  margin-left: 7px;
+}
+
+.home-mid-ul {
+  display: flex;
+  margin-top: 3px;
+  width: 100%;
+}
+
+.home-mid-li1-img img {
+  width: 100%;
+  height: 282px;
+}
+
+.home-mid-content-img {
+  width: 100%;
+  height: 141px;
+}
+
+.home-mid-content2 {
+  width: 100%;
+  height: 280px;
+  background: orangered;
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.home-mid-ul2 {
+  width: 50%;
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.home-mid-li3 {
+  width: 100%;
+  height: 140px;
+}
+
+.home-mid-li3 img {
+  width: 100%;
+  height: 140px;
+}
+
+.channel-floor-list3 {
+  margin-top: 3px;
+  width: 100%;
+  height: 205px;
+}
+
+.home-mid-ul3 {
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  flex-direction: row;
+  /* text-align: center; */
+}
+
+.home-mid-li4 {
+  width: 32%;
+  height: 205px;
+  background: #f9f9f9;
+  border-radius: 15px;
+  margin-left: 4px;
+  text-align: center;
+}
+
+.channel-floor-img {
+  width: 90%;
+  height: 103px;
+  margin: 0 auto;
+}
+
+.home-mid-li4 img {
+  margin-top: 15px;
+  width: 75%;
+  height: 83px;
+}
+
+.channel-floor-title {
+  margin-top: 25px;
+}
+
+.channel-floor-title,
+.channel-floor-data,
+.channel-floor-price {
+  font-size: 13px;
+}
+
+.channel-floor-data,
+.channel-floor-title {
+  color: #9b9b9b;
+}
+
+.channel-floor-data {
+  padding: 0.2rem 0 0.15rem;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+  bottom: 1rem;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+.goodsRecommend-head{
+  width: 100%;
+  height: 59px;
+  margin-top: 20px;
+}
+
+.goodsRecommend-head h2{
+  text-align: center;
+  font-weight: 300;
+
+}
+
+
+
 </style>
