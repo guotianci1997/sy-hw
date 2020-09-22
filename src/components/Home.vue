@@ -418,7 +418,7 @@
             <div class="home-bottom-title"><span style="marginRight:20px">登录</span><span style="color:#eaeaea">|</span><span style="marginLeft:20px">反馈</span></div>
             <div class="home-bottom-information">
                 <div class="home-bottom-information-top">
-                    <img src="../assets/Homeimg/information-title.png" alt="">
+                    <img src="../assets/Homeimg/information-title.png" alt="" style="width:414px">
                 </div>
                 <div class="home-bottom-information-bottom">
                     <p>隐私政策 | 用户协议 | 关于Cookie</p>
@@ -508,7 +508,7 @@ export default {
 .home-content {
   height: 100%;
   width: 100%;
-  overflow: auto;
+  overflow-y: auto;
 }
 
 .home-head-fixed {
@@ -928,6 +928,7 @@ swiper-slide {
 .home-bottom-information-top{
     width: 100%;
     height: 85px;
+    text-align: center;
 }
 
 .home-bottom-information-bottom{
