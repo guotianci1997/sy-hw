@@ -6,7 +6,7 @@
             <img src="../assets/Homeimg/logo.png" alt />
             </div>
             <div class="home-head-search-mid">
-            <div class="home-head-search-input">荣耀30</div>
+            <div class="home-head-search-input" @>荣耀30</div>
             </div>
             <div class="home-head-search-right">
             <span>对话框&nbsp;&nbsp;&nbsp;登录</span>
