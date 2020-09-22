@@ -41,7 +41,6 @@ export default {
     .content{
         height: 92%;
         width: 100%;
-        text-align: center;
     }
 
     .foot{
