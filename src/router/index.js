@@ -8,6 +8,7 @@ import Cart from "../components/Cart.vue"
 import Discover from "../components/Discover.vue"
 import Sort from "../components/Sort.vue"
 import Me from "../components/Me.vue"
+import Search from "../components/Search.vue"
 
 const routes = [
     {
@@ -22,7 +23,10 @@ const routes = [
             { path: '/me', component: Me }
         ]
     },
-    
+    {
+        path: "/search",
+        component: Search
+    }
 ]
 
 const router = new VueRouter({

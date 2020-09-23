@@ -6,7 +6,7 @@
             <img src="../assets/Homeimg/logo.png" alt />
             </div>
             <div class="home-head-search-mid">
-            <div class="home-head-search-input">荣耀30</div>
+            <div class="home-head-search-input" @click="gosearch">荣耀30</div>
             </div>
             <div class="home-head-search-right">
             <span>对话框&nbsp;&nbsp;&nbsp;登录</span>
@@ -489,6 +489,9 @@ export default {
         }
       }, 100);
     },
+    gosearch(){
+      this.$router.push('/search')
+    }
   },
 
   computed: {
@@ -911,7 +914,7 @@ swiper-slide {
     text-align: center;
     line-height: 50px;
     color: #4a4a4a;
-    border-bottom: #f8f8f8;
+    border-bottom: 1px solid #f8f8f8;
 }
 
 .home-bottom-line{
