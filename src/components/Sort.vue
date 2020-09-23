@@ -1,29 +1,24 @@
 <template>
   <div class="sort">
     <div class="sort-head">
-      <p class="sort-head-p"><span>畅想20</span></p>
+      <p class="sort-head-p" @click="gosearch"><span>畅想20</span></p>
     </div>
     <div class="sort-content">
       <div class="sort-left">
-          <div class="sort-left-div active"><a href="#"> 新品</a></div>
-          <div class="sort-left-div"><a href="#">华为手机</a> </div>
-          <div class="sort-left-div"><a href="#">荣耀手机</a> </div>
-          <div class="sort-left-div"><a href="#"> 笔记本</a></div>
-          <div class="sort-left-div"><a href="#">平板</a> </div>
-          <div class="sort-left-div"><a href="#">智能穿戴&VR</a> </div>
-          <div class="sort-left-div"><a href="#">智能屏</a> </div>
-          <div class="sort-left-div"><a href="#">智能家居</a> </div>
-          <div class="sort-left-div"><a href="#">耳机音箱</a> </div>
-          <div class="sort-left-div"><a href="#">专属配件</a> </div>
-          <div class="sort-left-div"><a href="#">通用配件</a> </div>
-          <div class="sort-left-div"><a href="#">生态产品</a> </div>
-          <div class="sort-left-div"><a href="#">增值服务</a> </div>
-          <div class="sort-left-div"><a href="#">智能计算</a> </div>
+          <div class="sort-left-div" v-for="(item,index) in list" :key="index"><a href="#" @click="tab(index)" :class="{active:num==index}">{{item}}</a></div>
       </div>
       <div class="sort-right">
-          <div class="sort-right-content">
-              <!-- <img src="../assets/Homeimg/sort-right-img1.png" alt=""><br>
-              <img src="../assets/Homeimg/sort-right-img2.png" alt=""> -->
+          <div class="sort-right-content" v-for="(item,index) in contentlist" :key="index" v-show="index==num">
+              <div class="sort-right-content-headimg">
+                <img :src="item.headimg" alt="">
+              </div>
+              <div class="sort-right-content-title">{{item.name}}</div>
+              <div class="sort-right-content-box">
+                  <div class="sort-right-content-img" v-for="(item,index) in item.contentimg" :key="index" @click="gocart(index)">
+                      <img :src="item.img" alt="">
+                      <p style="fontSize:13px;color:#666">{{item.title}}</p>
+                  </div>
+              </div>
           </div>
       </div>
     </div>
@@ -31,7 +26,241 @@
 </template>
 
 <script>
-export default {};
+export default {
+    data(){
+      return{
+        num:0,
+        list:["新品","华为手机","荣耀手机","笔记本","平板","智能穿戴&VR","智能屏","智能家居","耳机音箱","专属配件","通用配件","生态产品","增值服务","智能计算"],
+        contentlist:[
+        {
+            "headimg":require("../assets/Sortimg/sortimg1.png"),
+            "name":"手机",
+            "contentimg":[
+                {
+                  "img":require("../assets/Sortimg/sortimg2.png"),
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":require("../assets/Sortimg/sortimg3.png"),
+                  "title":"HUAWEI P40 Pro+"
+                },
+                {
+                  "img":require("../assets/Sortimg/sortimg2.png"),
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":require("../assets/Sortimg/sortimg3.png"),
+                  "title":"HUAWEI P40 Pro+"
+                }
+            ]
+        },
+        {
+            "headimg":require("../assets/Sortimg/sortimg1.png"),
+            "name":"HUAWEI P系列",
+            "contentimg":[
+                {
+                  "img":require("../assets/Sortimg/sortimg2.png"),
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":require("../assets/Sortimg/sortimg3.png"),
+                  "title":"HUAWEI P40 Pro+"
+                },
+                {
+                  "img":require("../assets/Sortimg/sortimg2.png"),
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":require("../assets/Sortimg/sortimg3.png"),
+                  "title":"HUAWEI P40 Pro+"
+                }
+            ]
+        },
+        {
+            "headimg":require("../assets/Sortimg/sortimg1.png"),
+            "name":"荣耀 V系列",
+            "contentimg":[
+                {
+                  "img":require("../assets/Sortimg/sortimg2.png"),
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":require("../assets/Sortimg/sortimg3.png"),
+                  "title":"HUAWEI P40 Pro+"
+                }
+            ]
+        },
+        {
+            "headimg":require("../assets/Sortimg/sortimg1.png"),
+            "name":"笔记本电脑",
+            "contentimg":[
+                {
+                  "img":require("../assets/Sortimg/sortimg2.png"),
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":require("../assets/Sortimg/sortimg3.png"),
+                  "title":"HUAWEI P40 Pro+"
+                }
+            ]
+        },
+        {
+            "headimg":require("../assets/Sortimg/sortimg1.png"),
+            "name":"手机",
+            "contentimg":[
+                {
+                  "img":require("../assets/Sortimg/sortimg2.png"),
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":require("../assets/Sortimg/sortimg3.png"),
+                  "title":"HUAWEI P40 Pro+"
+                }
+            ]
+        },
+        {
+            "headimg":require("../assets/Sortimg/sortimg1.png"),
+            "name":"手机",
+            "contentimg":[
+                {
+                  "img":require("../assets/Sortimg/sortimg2.png"),
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":require("../assets/Sortimg/sortimg3.png"),
+                  "title":"HUAWEI P40 Pro+"
+                }
+            ]
+        },
+        {
+            "headimg":require("../assets/Sortimg/sortimg1.png"),
+            "name":"手机",
+            "contentimg":[
+                {
+                  "img":require("../assets/Sortimg/sortimg2.png"),
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":require("../assets/Sortimg/sortimg3.png"),
+                  "title":"HUAWEI P40 Pro+"
+                }
+            ]
+        },
+        {
+            "headimg":require("../assets/Sortimg/sortimg1.png"),
+            "name":"手机",
+            "contentimg":[
+                {
+                  "img":require("../assets/Sortimg/sortimg2.png"),
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":require("../assets/Sortimg/sortimg3.png"),
+                  "title":"HUAWEI P40 Pro+"
+                }
+            ]
+        },
+        {
+            "headimg":require("../assets/Sortimg/sortimg1.png"),
+            "name":"手机",
+            "contentimg":[
+                {
+                  "img":require("../assets/Sortimg/sortimg2.png"),
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":require("../assets/Sortimg/sortimg3.png"),
+                  "title":"HUAWEI P40 Pro+"
+                }
+            ]
+        },
+        {
+            "headimg":require("../assets/Sortimg/sortimg1.png"),
+            "name":"手机",
+            "contentimg":[
+                {
+                  "img":require("../assets/Sortimg/sortimg2.png"),
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":require("../assets/Sortimg/sortimg3.png"),
+                  "title":"HUAWEI P40 Pro+"
+                }
+            ]
+        },
+        {
+            "headimg":require("../assets/Sortimg/sortimg1.png"),
+            "name":"手机",
+            "contentimg":[
+                {
+                  "img":require("../assets/Sortimg/sortimg2.png"),
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":require("../assets/Sortimg/sortimg3.png"),
+                  "title":"HUAWEI P40 Pro+"
+                }
+            ]
+        },
+        {
+            "headimg":require("../assets/Sortimg/sortimg1.png"),
+            "name":"手机",
+            "contentimg":[
+                {
+                  "img":require("../assets/Sortimg/sortimg2.png"),
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":require("../assets/Sortimg/sortimg3.png"),
+                  "title":"HUAWEI P40 Pro+"
+                }
+            ]
+        },
+        {
+            "headimg":require("../assets/Sortimg/sortimg1.png"),
+            "name":"手机",
+            "contentimg":[
+                {
+                  "img":require("../assets/Sortimg/sortimg2.png"),
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":require("../assets/Sortimg/sortimg3.png"),
+                  "title":"HUAWEI P40 Pro+"
+                }
+            ]
+        },
+        {
+            "headimg":require("../assets/Sortimg/sortimg1.png"),
+            "name":"手机",
+            "contentimg":[
+                {
+                  "img":require("../assets/Sortimg/sortimg2.png"),
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":require("../assets/Sortimg/sortimg3.png"),
+                  "title":"HUAWEI P40 Pro+"
+                }
+            ]
+        }
+    ]
+      }
+    },
+
+    methods:{
+      tab(index){
+        console.log(index);
+        this.num = index
+      },
+      gocart(index){
+        console.log(index);
+      },
+      gosearch(){
+        this.$router.push('/search')
+      }
+    }
+};
 </script>
 
 <style scoped>
@@ -44,6 +273,7 @@ export default {};
   width: 100%;
   height: 8%;
    /* padding-top: 5px; */
+   text-align: center;
 }
 
 .sort-head-p {
@@ -89,15 +319,50 @@ export default {};
     color: #000;
 }
 
+.active{
+  border-right: 3px solid #e01d20;
+}
+
 .sort-right{
     width: 70%;
     height: 100%;   
+    overflow: auto;
 }
 
 .sort-right-content{
-    width: 95%;
-    height: 146px;
-    background: rosybrown;
+    width: 100%;
+    height: 100%;
     margin: 0 auto;
+}
+
+.sort-right-content-headimg,.sort-right-content-headimg>img{
+  width: 100%;
+  height: 80px;
+}
+
+.sort-right-content-title{
+  width: 100%;
+  height: 46px;
+  text-align: center;
+  line-height: 46px;
+}
+
+.sort-right-content-box{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.sort-right-content-img{
+  width: 33.3%;
+  height: 124px;
+  text-align: center;
+}
+
+.sort-right-content-img>img{
+  width: 55px;
+  height: 55px;
+  margin-top: 20px;
 }
 </style>

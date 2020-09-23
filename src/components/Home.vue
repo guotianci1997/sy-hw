@@ -6,7 +6,7 @@
             <img src="../assets/Homeimg/logo.png" alt />
             </div>
             <div class="home-head-search-mid">
-            <div class="home-head-search-input" @>荣耀30</div>
+            <div class="home-head-search-input" @click="gosearch">荣耀30</div>
             </div>
             <div class="home-head-search-right">
             <span>对话框&nbsp;&nbsp;&nbsp;登录</span>
@@ -418,7 +418,7 @@
             <div class="home-bottom-title"><span style="marginRight:20px">登录</span><span style="color:#eaeaea">|</span><span style="marginLeft:20px">反馈</span></div>
             <div class="home-bottom-information">
                 <div class="home-bottom-information-top">
-                    <img src="../assets/Homeimg/information-title.png" alt="" style="width:414px;">
+                    <img src="../assets/Homeimg/information-title.png" alt="" style="width:414px">
                 </div>
                 <div class="home-bottom-information-bottom">
                     <p>隐私政策 | 用户协议 | 关于Cookie</p>
@@ -489,6 +489,9 @@ export default {
         }
       }, 100);
     },
+    gosearch(){
+      this.$router.push('/search')
+    }
   },
 
   computed: {
@@ -508,7 +511,7 @@ export default {
 .home-content {
   height: 100%;
   width: 100%;
-  overflow: auto;
+  overflow-y: auto;
 }
 
 .home-head-fixed {
@@ -911,7 +914,7 @@ swiper-slide {
     text-align: center;
     line-height: 50px;
     color: #4a4a4a;
-    border-bottom: #f8f8f8;
+    border-bottom: 1px solid #f8f8f8;
 }
 
 .home-bottom-line{
@@ -928,6 +931,7 @@ swiper-slide {
 .home-bottom-information-top{
     width: 100%;
     height: 85px;
+    text-align: center;
 }
 
 .home-bottom-information-bottom{
