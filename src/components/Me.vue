@@ -4,7 +4,7 @@
           <p  class="me-show-p">
           <img src="../assets/Homeimg/me-head-img1.png" alt="">
           </p>
-          <span class="me-show-title">登录/注册</span>
+          <span class="me-show-title" @click="goregister">登录/注册</span>
           <div class="me-head-box-img">
               <img src="../assets/Homeimg/me-icon1.png" alt="">
               <img src="../assets/Homeimg/me-icon2.png" alt="">
@@ -15,7 +15,7 @@
         <p class="me-heda-img">
           <img src="../assets/Homeimg/me-head-img1.png" alt />
         </p>
-        <p class="me-head-title">登录/注册</p>
+        <p class="me-head-title" @click="goregister">登录/注册</p>
         <p class="me-head-title-content">
           <img src="../assets/Homeimg/me-title-img.png" alt="">
           <span class="title">签到领积分</span>
@@ -219,6 +219,9 @@ export default {
       if(event.target.scrollTop<100){
         this.scoshow=false;
       }
+    },
+    goregister(){
+      this.$router.push("/register")
     }
   },
   computed: {

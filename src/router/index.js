@@ -9,6 +9,8 @@ import Discover from "../components/Discover.vue"
 import Sort from "../components/Sort.vue"
 import Me from "../components/Me.vue"
 import Search from "../components/Search.vue"
+import Register from "../components/Register.vue"
+
 
 const routes = [
     {
@@ -26,6 +28,11 @@ const routes = [
     {
         path: "/search",
         component: Search
+    },
+    {
+        path:"/register",
+        component:Register
+
     }
 ]
 

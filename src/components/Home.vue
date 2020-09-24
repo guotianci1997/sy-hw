@@ -9,17 +9,20 @@
             <div class="home-head-search-input" @click="gosearch">荣耀30</div>
             </div>
             <div class="home-head-search-right">
-            <span>对话框&nbsp;&nbsp;&nbsp;登录</span>
+            <span><img src="../assets/Homeimg/home-huihua-img.png" alt=""></span>
+            <span>登录</span>
             </div>
         </div>
         <div class="home-head-select">
             <div class="home-head-select-left">
             <a href="#">推荐</a>
-            <a href="#">华为专区</a>
-            <a href="#">荣耀专区</a>
-            <a href="#">P40 系列</a>
+            <a href="https://msale.vmall.com/huaweizone.html">华为专区</a>
+            <a href="https://msale.vmall.com/honor.html">荣耀专区</a>
+            <a href="https://msale.vmall.com/pseries.html">P40 系列</a>
+            <a href="https://msale.vmall.com/smarthome2020.html">安心家具</a>
+            <a href="https://msale.vmall.com/ptpd.html">拼团</a>
             </div>
-            <div class="home-head-select-right">图标</div>
+            <div class="home-head-select-right"><img src="../assets/Homeimg/home-img.png" alt=""></div>
         </div>
         </div>
         <div class="home-head">
@@ -76,45 +79,45 @@
         <div class="home-head-swiper2">
             <swiper ref="mySwiper" :options="swiperOptions" class="swiperBox2">
             <swiper-slide class="swiper2">
-                <a href="#">
+                <a href="https://m.vmall.com/member/privilege">
                 <div class="swiper2-img"></div>
                 <p>会员领券</p>
                 </a>
-                <a href="#">
+                <a href="https://msale.vmall.com/hwsmh.html">
                 <div class="swiper2-img"></div>
                 <p>会员领券</p>
                 </a>
-                <a href="#">
+                <a href="https://msale.vmall.com/education.html">
                 <div class="swiper2-img"></div>
                 <p>会员领券</p>
                 </a>
-                <a href="#">
+                <a href="https://msale.vmall.com/smarthome2020.html">
                 <div class="swiper2-img"></div>
                 <p>会员领券</p>
                 </a>
-                <a href="#">
+                <a href="https://vmall-m.aihuishou.com/">
                 <div class="swiper2-img"></div>
                 <p>会员领券</p>
                 </a>
             </swiper-slide>
             <swiper-slide class="swiper2">
-                <a href="#">
+                <a href="https://m.vmall.com/member/inviteGift">
                 <div class="swiper2-img"></div>
                 <p>会员领券</p>
                 </a>
-                <a href="#">
+                <a href="https://m.vmall.com/openTest">
                 <div class="swiper2-img"></div>
                 <p>会员领券</p>
                 </a>
-                <a href="#">
+                <a href="https://m.vmall.com/live/home">
                 <div class="swiper2-img"></div>
                 <p>会员领券</p>
                 </a>
-                <a href="#">
+                <a href="https://msale.vmall.com/points.html">
                 <div class="swiper2-img"></div>
                 <p>会员领券</p>
                 </a>
-                <a href="#">
+                <a href="https://msale.vmall.com/smarthome.html">
                 <div class="swiper2-img"></div>
                 <p>会员领券</p>
                 </a>
@@ -277,7 +280,7 @@
             <ul class="home-mid-ul">
                 <li class="home-mid-li1">
                 <div class="home-mid-li1-img">
-                    <a href="#">
+                    <a href="https://msale.vmall.com/pseries.html">
                     <img src="../assets/Homeimg/home-mid-content-img1.png" alt />
                     </a>
                 </div>
@@ -525,7 +528,6 @@ export default {
 .home-head {
   height: 52.5%;
   width: 100%;
-  /* background-color: wheat; */
 }
 
 .home-head-search {
@@ -587,40 +589,51 @@ export default {
 }
 
 .home-head-select-left {
-  width: 85%;
-  height: 100%;
+  width: 100%;
+  height: 90%;
   text-align: center;
-  overflow-y: auto;
+  overflow: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .home-head-select-left a {
   display: inline-block;
-  width: 25%;
+  width: 50%;
+  /* background: olive; */
   color: rgb(119, 119, 119);
 }
 
 .home-head-select-right {
-  width: 15%;
-  height: 100%;
+  width: 10%;
+  height:40%;
+  position: absolute;
+  right: 0;
+  background: white;
+  z-index: 50;
+  text-align: center;
 }
 
 .home-head-swiper {
   height: 170px;
-  width: 100%;
-  background-color: aqua;
-  margin-top: 80px;
+  width: 97%;
+  margin: 80px auto 0 auto;
+ 
 }
 
 .swiperBox,
-swiper-slide {
+.swiper-slide {
   width: 100%;
   height: 100%;
   text-align: center;
+   border-radius: 10px;
 }
 
 .swiperBox img {
   width: 100%;
   height: 170px;
+   border-radius: 10px;
 }
 
 .swiper-pagination {
