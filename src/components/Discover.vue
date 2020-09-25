@@ -201,4 +201,5 @@ h2 {
 .journalism-img{
     margin:20px auto;
 }
+
 </style>

@@ -469,8 +469,7 @@ li {
   margin-top: -5px;
 }
 
-.me-bottom-box-li1 img{
-}
+
 
 .me-bottom-box3 {
   width: 95%;

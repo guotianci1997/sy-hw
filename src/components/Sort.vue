@@ -9,17 +9,27 @@
     </div>
     <div class="sort-content">
       <div class="sort-left">
-          <div class="sort-left-div" v-for="(item,index) in list" :key="index"><a href="#" @click="tab(index)" :class="{active:num==index}">{{item}}</a></div>
+          <div class="sort-left-div" v-for="(item,index) in list" :key="index"><span @click="tab(index)" :class="{active:num==index}">{{item}}</span></div>
       </div>
       <div class="sort-right">
           <div class="sort-right-content" v-for="(item,index) in contentlist" :key="index" v-show="index==num">
               <div class="sort-right-content-headimg">
                 <img :src="item.headimg" alt="">
               </div>
+              <div class="sort-right-content-headimg">
+                <img :src="item.headimg1" alt="">
+              </div>
               <div class="sort-right-content-title">{{item.name}}</div>
               <div class="sort-right-content-box">
                   <div class="sort-right-content-img" v-for="(item,index) in item.contentimg" :key="index" @click="gocart(index)">
-                      <img :src="item.img" alt="">
+                      <img :src="item.img" alt="" @click="godetail(index)">
+                      <p style="fontSize:13px;color:#666">{{item.title}}</p>
+                  </div>
+              </div>
+              <div class="sort-right-content-title">{{item.name1}}</div>
+              <div class="sort-right-content-box">
+                  <div class="sort-right-content-img" v-for="(item,index) in item.contentimg1" :key="index" @click="gocart(index)">
+                      <img :src="item.img" alt="" @click="godetail(index)">
                       <p style="fontSize:13px;color:#666">{{item.title}}</p>
                   </div>
               </div>
@@ -30,225 +40,28 @@
 </template>
 
 <script>
+import Vue from "vue"
+import Vuex from "vuex"
+Vue.use(Vuex)
+import store from "../store/index.js"
 export default {
+    computed:{
+        detaillist(){
+            return this.$store.state.detaillist;
+        },
+        cartlist(){
+            return this.$store.state.cartlist;
+        },
+        /* detailindex() {
+          return this.$store.state.detailindex;
+        }, */
+    },
+
     data(){
       return{
         num:0,
         list:["新品","华为手机","荣耀手机","笔记本","平板","智能穿戴&VR","智能屏","智能家居","耳机音箱","专属配件","通用配件","生态产品","增值服务","智能计算"],
-        contentlist:[
-        {
-            "headimg":require("../assets/Sortimg/sortimg1.png"),
-            "name":"手机",
-            "contentimg":[
-                {
-                  "img":require("../assets/Sortimg/sortimg2.png"),
-                  "title":"HUAWEI P40 5G"
-                },
-                {
-                  "img":require("../assets/Sortimg/sortimg3.png"),
-                  "title":"HUAWEI P40 Pro+"
-                },
-                {
-                  "img":require("../assets/Sortimg/sortimg2.png"),
-                  "title":"HUAWEI P40 5G"
-                },
-                {
-                  "img":require("../assets/Sortimg/sortimg3.png"),
-                  "title":"HUAWEI P40 Pro+"
-                }
-            ]
-        },
-        {
-            "headimg":require("../assets/Sortimg/sortimg1.png"),
-            "name":"HUAWEI P系列",
-            "contentimg":[
-                {
-                  "img":require("../assets/Sortimg/sortimg2.png"),
-                  "title":"HUAWEI P40 5G"
-                },
-                {
-                  "img":require("../assets/Sortimg/sortimg3.png"),
-                  "title":"HUAWEI P40 Pro+"
-                },
-                {
-                  "img":require("../assets/Sortimg/sortimg2.png"),
-                  "title":"HUAWEI P40 5G"
-                },
-                {
-                  "img":require("../assets/Sortimg/sortimg3.png"),
-                  "title":"HUAWEI P40 Pro+"
-                }
-            ]
-        },
-        {
-            "headimg":require("../assets/Sortimg/sortimg1.png"),
-            "name":"荣耀 V系列",
-            "contentimg":[
-                {
-                  "img":require("../assets/Sortimg/sortimg2.png"),
-                  "title":"HUAWEI P40 5G"
-                },
-                {
-                  "img":require("../assets/Sortimg/sortimg3.png"),
-                  "title":"HUAWEI P40 Pro+"
-                }
-            ]
-        },
-        {
-            "headimg":require("../assets/Sortimg/sortimg1.png"),
-            "name":"笔记本电脑",
-            "contentimg":[
-                {
-                  "img":require("../assets/Sortimg/sortimg2.png"),
-                  "title":"HUAWEI P40 5G"
-                },
-                {
-                  "img":require("../assets/Sortimg/sortimg3.png"),
-                  "title":"HUAWEI P40 Pro+"
-                }
-            ]
-        },
-        {
-            "headimg":require("../assets/Sortimg/sortimg1.png"),
-            "name":"手机",
-            "contentimg":[
-                {
-                  "img":require("../assets/Sortimg/sortimg2.png"),
-                  "title":"HUAWEI P40 5G"
-                },
-                {
-                  "img":require("../assets/Sortimg/sortimg3.png"),
-                  "title":"HUAWEI P40 Pro+"
-                }
-            ]
-        },
-        {
-            "headimg":require("../assets/Sortimg/sortimg1.png"),
-            "name":"手机",
-            "contentimg":[
-                {
-                  "img":require("../assets/Sortimg/sortimg2.png"),
-                  "title":"HUAWEI P40 5G"
-                },
-                {
-                  "img":require("../assets/Sortimg/sortimg3.png"),
-                  "title":"HUAWEI P40 Pro+"
-                }
-            ]
-        },
-        {
-            "headimg":require("../assets/Sortimg/sortimg1.png"),
-            "name":"手机",
-            "contentimg":[
-                {
-                  "img":require("../assets/Sortimg/sortimg2.png"),
-                  "title":"HUAWEI P40 5G"
-                },
-                {
-                  "img":require("../assets/Sortimg/sortimg3.png"),
-                  "title":"HUAWEI P40 Pro+"
-                }
-            ]
-        },
-        {
-            "headimg":require("../assets/Sortimg/sortimg1.png"),
-            "name":"手机",
-            "contentimg":[
-                {
-                  "img":require("../assets/Sortimg/sortimg2.png"),
-                  "title":"HUAWEI P40 5G"
-                },
-                {
-                  "img":require("../assets/Sortimg/sortimg3.png"),
-                  "title":"HUAWEI P40 Pro+"
-                }
-            ]
-        },
-        {
-            "headimg":require("../assets/Sortimg/sortimg1.png"),
-            "name":"手机",
-            "contentimg":[
-                {
-                  "img":require("../assets/Sortimg/sortimg2.png"),
-                  "title":"HUAWEI P40 5G"
-                },
-                {
-                  "img":require("../assets/Sortimg/sortimg3.png"),
-                  "title":"HUAWEI P40 Pro+"
-                }
-            ]
-        },
-        {
-            "headimg":require("../assets/Sortimg/sortimg1.png"),
-            "name":"手机",
-            "contentimg":[
-                {
-                  "img":require("../assets/Sortimg/sortimg2.png"),
-                  "title":"HUAWEI P40 5G"
-                },
-                {
-                  "img":require("../assets/Sortimg/sortimg3.png"),
-                  "title":"HUAWEI P40 Pro+"
-                }
-            ]
-        },
-        {
-            "headimg":require("../assets/Sortimg/sortimg1.png"),
-            "name":"手机",
-            "contentimg":[
-                {
-                  "img":require("../assets/Sortimg/sortimg2.png"),
-                  "title":"HUAWEI P40 5G"
-                },
-                {
-                  "img":require("../assets/Sortimg/sortimg3.png"),
-                  "title":"HUAWEI P40 Pro+"
-                }
-            ]
-        },
-        {
-            "headimg":require("../assets/Sortimg/sortimg1.png"),
-            "name":"手机",
-            "contentimg":[
-                {
-                  "img":require("../assets/Sortimg/sortimg2.png"),
-                  "title":"HUAWEI P40 5G"
-                },
-                {
-                  "img":require("../assets/Sortimg/sortimg3.png"),
-                  "title":"HUAWEI P40 Pro+"
-                }
-            ]
-        },
-        {
-            "headimg":require("../assets/Sortimg/sortimg1.png"),
-            "name":"手机",
-            "contentimg":[
-                {
-                  "img":require("../assets/Sortimg/sortimg2.png"),
-                  "title":"HUAWEI P40 5G"
-                },
-                {
-                  "img":require("../assets/Sortimg/sortimg3.png"),
-                  "title":"HUAWEI P40 Pro+"
-                }
-            ]
-        },
-        {
-            "headimg":require("../assets/Sortimg/sortimg1.png"),
-            "name":"手机",
-            "contentimg":[
-                {
-                  "img":require("../assets/Sortimg/sortimg2.png"),
-                  "title":"HUAWEI P40 5G"
-                },
-                {
-                  "img":require("../assets/Sortimg/sortimg3.png"),
-                  "title":"HUAWEI P40 Pro+"
-                }
-            ]
-        }
-    ]
+        contentlist:[],
       }
     },
 
@@ -262,8 +75,38 @@ export default {
       },
       gosearch(){
         this.$router.push('/search')
-      }
-    }
+      },
+      /* goshopping(index){
+            this.$store.commit("goshopping",index);
+      }, */
+      /* goshopping1(index){
+        this.$store.commit("goshopping1",index);
+      } */
+      godetail(index){
+          this.$router.push('/detail');
+          
+          this.$store.state.detailindex=index
+
+          this.detaillist.push(this.cartlist[this.$store.state.detailindex])
+      },
+
+      getData(){
+            let that = this;
+            let url = "http://127.0.0.1:5500/src/data/sort.json";
+            let xhr = new XMLHttpRequest();
+            xhr.open("GET", url);
+            xhr.send();
+
+            xhr.onload = function(){
+                console.log(xhr.response);
+                that.contentlist = JSON.parse(xhr.response).contentlist
+            }
+      },
+    },
+
+    created(){
+        this.getData();
+    },
 };
 </script>
 
@@ -330,7 +173,7 @@ export default {
     height: 51px;
 }
 
-.sort-left-div a{
+.sort-left-div span{
     display: inline-block;
     width: 80%;
     margin-left: 15%;
@@ -357,6 +200,10 @@ export default {
 .sort-right-content-headimg,.sort-right-content-headimg>img{
   width: 100%;
   height: 80px;
+}
+
+.sort-right-content-headimg{
+  margin-bottom: 10px;
 }
 
 .sort-right-content-title{

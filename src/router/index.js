@@ -10,7 +10,7 @@ import Sort from "../components/Sort.vue"
 import Me from "../components/Me.vue"
 import Search from "../components/Search.vue"
 import Register from "../components/Register.vue"
-
+import Cartdetail from "../components/Cartdetail.vue"
 
 const routes = [
     {
@@ -30,9 +30,12 @@ const routes = [
         component: Search
     },
     {
-        path:"/register",
-        component:Register
-
+        path: "/register",
+        component: Register
+    },
+    {
+        path: "/detail",
+        component: Cartdetail
     }
 ]
 
