@@ -1,7 +1,11 @@
 <template>
   <div class="sort">
     <div class="sort-head">
-      <p class="sort-head-p" @click="gosearch"><span>畅想20</span></p>
+      <p class="sort-head-p" @click="gosearch">
+         <img src="../assets/Homeimg/sousuo.png" alt="">
+        <span>畅想20</span>
+      </p>
+        <img  class="sort-head-p-img" src="../assets/Homeimg/sort-img1.png" alt="">
     </div>
     <div class="sort-content">
       <div class="sort-left">
@@ -278,19 +282,34 @@ export default {
 
 .sort-head-p {
   margin-left: 20px;
-  width: 80%;
+  width: 82%;
   height: 70%;
   background: #f5f5f5;
   border-radius: 30px;
   position: relative;
-  top: 3px;
+  top: 10%;
+}
+
+.sort-head-p img{
+  position: absolute;
+  left: 10px;
+  top: 27%;
 }
 
 .sort-head-p span{
     color: rgb(194, 190, 190);
   font-size: 14px;
-  line-height: 33px;
-  margin-left: 10px;
+  line-height: 35px;
+  /* margin-left: 10px; */
+  position: absolute;
+  left: 35px;
+  top: 5%;
+}
+
+.sort-head-p-img{
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 
 .sort-content {

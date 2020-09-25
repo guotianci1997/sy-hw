@@ -93,7 +93,7 @@
       </div>
     </div>
     <div class="me-bottom-box1">
-      <div class="me-bottom-box-head">
+      <div class="me-bottom-box-head1">
         <span class="me-bottom-box-span1">会员专享</span>
         <div class="me-bottom-span">
           <span class="me-bottom-box-span2">更多会员权益</span>
@@ -299,7 +299,9 @@ vertical-align: middle;
 }
 
 .me-head-box1-img{
-    margin-left: 30px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
 }
 
 .me-head-box1-img img {
@@ -445,14 +447,29 @@ li {
   top: -25px;
   border-radius: 15px;
 }
+
+.me-bottom-box-head1 {
+  width: 95%;
+  height: 27%;
+  margin: 0 auto;
+  position: relative;
+  line-height: 46px;
+}
+
 .me-bottom-box-ul1 {
+  height: 73%;
   width: 100%;
   display: flex;
   overflow: auto;
 }
 
 .me-bottom-box-li1 {
+  width: 100%;
+  height: 100%;
   margin-top: -5px;
+}
+
+.me-bottom-box-li1 img{
 }
 
 .me-bottom-box3 {
@@ -544,6 +561,7 @@ h3 {
 .home-bottom-information-top {
   width: 100%;
   height: 85px;
+  text-align: center;
 }
 
 .home-bottom-information-bottom {
@@ -588,5 +606,10 @@ z-index: 100;
 .me-head-box-img{
   position: absolute;
   right: 10px;
+  top: 5px;
+}
+
+.me-head-box-img img{
+  margin-left: 5px;
 }
 </style>
