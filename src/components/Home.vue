@@ -1,26 +1,26 @@
 <template>
     <div class="home-content">
         <div class="home-head-fixed">
-        <div class="home-head-search">
-            <div class="home-head-search-left">
-            <img src="../assets/Homeimg/logo.png" alt />
-            </div>
-            <div class="home-head-search-mid">
-            <div class="home-head-search-input" @click="gosearch">荣耀30</div>
-            </div>
-            <div class="home-head-search-right">
-            <span>对话框&nbsp;&nbsp;&nbsp;登录</span>
-            </div>
-        </div>
-        <div class="home-head-select">
-            <div class="home-head-select-left">
-            <a href="#">推荐</a>
-            <a href="#">华为专区</a>
-            <a href="#">荣耀专区</a>
-            <a href="#">P40 系列</a>
-            </div>
-            <div class="home-head-select-right">图标</div>
-        </div>
+          <div class="home-head-search">
+              <div class="home-head-search-left">
+              <img src="../assets/Homeimg/logo.png" alt />
+              </div>
+              <div class="home-head-search-mid">
+              <div class="home-head-search-input" @click="gosearch">荣耀30</div>
+              </div>
+              <div class="home-head-search-right">
+              <span>对话框&nbsp;&nbsp;&nbsp;登录</span>
+              </div>
+          </div>
+          <div class="home-head-select">
+              <div class="home-head-select-left">
+              <a href="#">推荐</a>
+              <a href="#">华为专区</a>
+              <a href="#">荣耀专区</a>
+              <a href="#">P40 系列</a>
+              </div>
+              <div class="home-head-select-right">图标</div>
+          </div>
         </div>
         <div class="home-head">
         <div class="home-head-swiper">
@@ -120,7 +120,7 @@
                 </a>
             </swiper-slide>
             </swiper>
-            <div class="swiper-pagination" slot="pagination"></div>
+            <!-- <div class="swiper-pagination" slot="pagination"></div> -->
         </div>
         <div class="home-head-more">
             <a href="#" class="home-head-more-left">

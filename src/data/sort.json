@@ -1,117 +1,450 @@
 {
     "code": 200,
     "status": "成功",
-    "list":[
+    "contentlist":[
         {
-            "headimg":"../assets/Sortimg/sortimg1.png",
+            "headimg":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg1.png",
+            "headimg1":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg4.png",
             "name":"手机",
             "contentimg":[
-                "../assets/Sortimg/sortimg2.png",
-                "../assets/Sortimg/sortimg3.png"
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg2.png",
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg3.png",
+                  "title":"HUAWEI P40 Pro+"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg5.png",
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg6.png",
+                  "title":"HUAWEI P40 Pro+"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg7.png",
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg8.png",
+                  "title":"HUAWEI P40 Pro+"
+                }
+            ],
+            "name1":"笔记本+智慧屏",
+            "contentimg1":[
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg15.png",
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg16.png",
+                  "title":"HUAWEI P40 Pro+"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg17.png",
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg18.png",
+                  "title":"HUAWEI P40 Pro+"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg19.png",
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg20.png",
+                  "title":"HUAWEI P40 Pro+"
+                }
             ]
         },
         {
-            "headimg":"../assets/Sortimg/sortimg1.png",
-            "name":"手机",
+            "headimg":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg9.png",
+            "headimg1":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg4.png",
+            "name":"HUAWEI P系列",
             "contentimg":[
-                "../assets/Sortimg/sortimg2.png",
-                "../assets/Sortimg/sortimg3.png"
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg2.png",
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg3.png",
+                  "title":"HUAWEI P40 Pro+"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg2.png",
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg12.png",
+                  "title":"HUAWEI P40 Pro+"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg13.png",
+                  "title":"HUAWEI P40 Pro+"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg14.png",
+                  "title":"HUAWEI P40 Pro+"
+                }
             ]
         },
         {
-            "headimg":"../assets/Sortimg/sortimg1.png",
-            "name":"手机",
+            "headimg":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg10.png",
+            "headimg1":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg4.png",
+            "name":"荣耀 V系列",
             "contentimg":[
-                "../assets/Sortimg/sortimg2.png",
-                "../assets/Sortimg/sortimg3.png"
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg2.png",
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg3.png",
+                  "title":"HUAWEI P40 Pro+"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg5.png",
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg6.png",
+                  "title":"HUAWEI P40 Pro+"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg7.png",
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg8.png",
+                  "title":"HUAWEI P40 Pro+"
+                }
             ]
         },
         {
-            "headimg":"../assets/Sortimg/sortimg1.png",
-            "name":"手机",
+            "headimg":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg11.png",
+            "headimg1":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg4.png",
+            "name":"笔记本电脑",
             "contentimg":[
-                "../assets/Sortimg/sortimg2.png",
-                "../assets/Sortimg/sortimg3.png"
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg15.png",
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg16.png",
+                  "title":"HUAWEI P40 Pro+"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg17.png",
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg18.png",
+                  "title":"HUAWEI P40 Pro+"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg19.png",
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg20.png",
+                  "title":"HUAWEI P40 Pro+"
+                }
             ]
         },
         {
-            "headimg":"../assets/Sortimg/sortimg1.png",
-            "name":"手机",
-            "contentimg":[
-                "../assets/Sortimg/sortimg2.png",
-                "../assets/Sortimg/sortimg3.png"
-            ]
-        },
+          "headimg":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg9.png",
+          "headimg1":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg4.png",
+          "name":"HUAWEI P系列",
+          "contentimg":[
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg2.png",
+                "title":"HUAWEI P40 5G"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg3.png",
+                "title":"HUAWEI P40 Pro+"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg2.png",
+                "title":"HUAWEI P40 5G"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg12.png",
+                "title":"HUAWEI P40 Pro+"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg13.png",
+                "title":"HUAWEI P40 Pro+"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg14.png",
+                "title":"HUAWEI P40 Pro+"
+              }
+          ]
+      },
+      {
+          "headimg":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg10.png",
+          "headimg1":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg4.png",
+          "name":"荣耀 V系列",
+          "contentimg":[
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg2.png",
+                "title":"HUAWEI P40 5G"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg3.png",
+                "title":"HUAWEI P40 Pro+"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg5.png",
+                "title":"HUAWEI P40 5G"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg6.png",
+                "title":"HUAWEI P40 Pro+"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg7.png",
+                "title":"HUAWEI P40 5G"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg8.png",
+                "title":"HUAWEI P40 Pro+"
+              }
+          ]
+      },
+      {
+          "headimg":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg11.png",
+          "headimg1":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg4.png",
+          "name":"笔记本电脑",
+          "contentimg":[
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg15.png",
+                "title":"HUAWEI P40 5G"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg16.png",
+                "title":"HUAWEI P40 Pro+"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg17.png",
+                "title":"HUAWEI P40 5G"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg18.png",
+                "title":"HUAWEI P40 Pro+"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg19.png",
+                "title":"HUAWEI P40 5G"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg20.png",
+                "title":"HUAWEI P40 Pro+"
+              }
+          ]
+      },
         {
-            "headimg":"../assets/Sortimg/sortimg1.png",
-            "name":"手机",
-            "contentimg":[
-                "../assets/Sortimg/sortimg2.png",
-                "../assets/Sortimg/sortimg3.png"
-            ]
-        },
+          "headimg":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg9.png",
+          "headimg1":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg4.png",
+          "name":"HUAWEI P系列",
+          "contentimg":[
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg2.png",
+                "title":"HUAWEI P40 5G"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg3.png",
+                "title":"HUAWEI P40 Pro+"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg2.png",
+                "title":"HUAWEI P40 5G"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg12.png",
+                "title":"HUAWEI P40 Pro+"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg13.png",
+                "title":"HUAWEI P40 Pro+"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg14.png",
+                "title":"HUAWEI P40 Pro+"
+              }
+          ]
+      },
+      {
+          "headimg":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg10.png",
+          "headimg1":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg4.png",
+          "name":"荣耀 V系列",
+          "contentimg":[
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg2.png",
+                "title":"HUAWEI P40 5G"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg3.png",
+                "title":"HUAWEI P40 Pro+"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg5.png",
+                "title":"HUAWEI P40 5G"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg6.png",
+                "title":"HUAWEI P40 Pro+"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg7.png",
+                "title":"HUAWEI P40 5G"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg8.png",
+                "title":"HUAWEI P40 Pro+"
+              }
+          ]
+      },
+      {
+          "headimg":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg11.png",
+          "headimg1":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg4.png",
+          "name":"笔记本电脑",
+          "contentimg":[
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg15.png",
+                "title":"HUAWEI P40 5G"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg16.png",
+                "title":"HUAWEI P40 Pro+"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg17.png",
+                "title":"HUAWEI P40 5G"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg18.png",
+                "title":"HUAWEI P40 Pro+"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg19.png",
+                "title":"HUAWEI P40 5G"
+              },
+              {
+                "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg20.png",
+                "title":"HUAWEI P40 Pro+"
+              }
+          ]
+      },
+      {
+        "headimg":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg9.png",
+        "headimg1":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg4.png",
+        "name":"HUAWEI P系列",
+        "contentimg":[
+            {
+              "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg2.png",
+              "title":"HUAWEI P40 5G"
+            },
+            {
+              "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg3.png",
+              "title":"HUAWEI P40 Pro+"
+            },
+            {
+              "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg2.png",
+              "title":"HUAWEI P40 5G"
+            },
+            {
+              "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg12.png",
+              "title":"HUAWEI P40 Pro+"
+            },
+            {
+              "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg13.png",
+              "title":"HUAWEI P40 Pro+"
+            },
+            {
+              "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg14.png",
+              "title":"HUAWEI P40 Pro+"
+            }
+        ]
+    },
+    {
+        "headimg":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg10.png",
+        "headimg1":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg4.png",
+        "name":"荣耀 V系列",
+        "contentimg":[
+            {
+              "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg2.png",
+              "title":"HUAWEI P40 5G"
+            },
+            {
+              "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg3.png",
+              "title":"HUAWEI P40 Pro+"
+            },
+            {
+              "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg5.png",
+              "title":"HUAWEI P40 5G"
+            },
+            {
+              "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg6.png",
+              "title":"HUAWEI P40 Pro+"
+            },
+            {
+              "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg7.png",
+              "title":"HUAWEI P40 5G"
+            },
+            {
+              "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg8.png",
+              "title":"HUAWEI P40 Pro+"
+            }
+        ]
+    },
+    {
+        "headimg":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg11.png",
+        "headimg1":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg4.png",
+        "name":"笔记本电脑",
+        "contentimg":[
+            {
+              "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg15.png",
+              "title":"HUAWEI P40 5G"
+            },
+            {
+              "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg16.png",
+              "title":"HUAWEI P40 Pro+"
+            },
+            {
+              "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg17.png",
+              "title":"HUAWEI P40 5G"
+            },
+            {
+              "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg18.png",
+              "title":"HUAWEI P40 Pro+"
+            },
+            {
+              "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg19.png",
+              "title":"HUAWEI P40 5G"
+            },
+            {
+              "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg20.png",
+              "title":"HUAWEI P40 Pro+"
+            }
+        ]
+    },
         {
-            "headimg":"../assets/Sortimg/sortimg1.png",
+            "headimg":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg1.png",
+            "headimg1":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg4.png",
             "name":"手机",
             "contentimg":[
-                "../assets/Sortimg/sortimg2.png",
-                "../assets/Sortimg/sortimg3.png"
-            ]
-        },
-        {
-            "headimg":"../assets/Sortimg/sortimg1.png",
-            "name":"手机",
-            "contentimg":[
-                "../assets/Sortimg/sortimg2.png",
-                "../assets/Sortimg/sortimg3.png"
-            ]
-        },
-        {
-            "headimg":"../assets/Sortimg/sortimg1.png",
-            "name":"手机",
-            "contentimg":[
-                "../assets/Sortimg/sortimg2.png",
-                "../assets/Sortimg/sortimg3.png"
-            ]
-        },
-        {
-            "headimg":"../assets/Sortimg/sortimg1.png",
-            "name":"手机",
-            "contentimg":[
-                "../assets/Sortimg/sortimg2.png",
-                "../assets/Sortimg/sortimg3.png"
-            ]
-        },
-        {
-            "headimg":"../assets/Sortimg/sortimg1.png",
-            "name":"手机",
-            "contentimg":[
-                "../assets/Sortimg/sortimg2.png",
-                "../assets/Sortimg/sortimg3.png"
-            ]
-        },
-        {
-            "headimg":"../assets/Sortimg/sortimg1.png",
-            "name":"手机",
-            "contentimg":[
-                "../assets/Sortimg/sortimg2.png",
-                "../assets/Sortimg/sortimg3.png"
-            ]
-        },
-        {
-            "headimg":"../assets/Sortimg/sortimg1.png",
-            "name":"手机",
-            "contentimg":[
-                "../assets/Sortimg/sortimg2.png",
-                "../assets/Sortimg/sortimg3.png"
-            ]
-        },
-        {
-            "headimg":"../assets/Sortimg/sortimg1.png",
-            "name":"手机",
-            "contentimg":[
-                "../assets/Sortimg/sortimg2.png",
-                "../assets/Sortimg/sortimg3.png"
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg2.png",
+                  "title":"HUAWEI P40 5G"
+                },
+                {
+                  "img":"http://127.0.0.1:5500/src/assets/Sortimg/sortimg3.png",
+                  "title":"HUAWEI P40 Pro+"
+                }
             ]
         }
     ]

@@ -20,4 +20,8 @@ body,
   height: 100%;
   width: 100%;
 }
+
+li{
+  list-style: none;
+}
 </style>

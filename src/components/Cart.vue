@@ -1,33 +1,54 @@
 <template>
     <div class="cart-content">
         <div class="cart-box1" v-if="shoplist.length>0">
-            <div class="cart-content-head">购物车<a href="#" @click="clear">清空</a></div>
-            <div class="cart-box-list" v-for="(item,index) in shoplist" :key="index">
-                <div style="width:15%;height:100%">
-                    <input type="checkbox" name="" id="" checked>
-                </div>
-                <a href="#"><img :src="item.img" alt=""></a>
-                <div class="cart-box-list-title">
-                    <p style="color:#333;fontSize:14px;marginTop:30px">{{item.carttitle1}}</p>
-                    <p style="color:#666;fontSize:12px">{{item.carttitle2}}</p>
-                    <div class="fenqi">分期免息</div>
-                    <div class="price">
-                        <span>¥{{item.price}}元</span>
-                        <div class="priceComputed">
-                            <span class="minus" @click="minus(index)">－</span>
-                            <span style="lineHeight:60px">{{cartnum}}</span>
-                            <span class="plus" @click="plus(index)">＋</span>
+            <!-- <a href="#" @click="clear">清空</a> -->
+            <div class="cart-content-head1">购物车
+                <div href="#" v-if="edit" @click="editcart">编辑</div>
+                <div href="#" v-else @click="finish">完成</div>
+            </div>
+            <div class="cart-content-mid">
+                <div class="cart-box-list" v-for="(item,index) in shoplist" :key="index">
+                    <div style="width:15%;height:100%">
+                        <input @change="updateselect" type="checkbox" name="" id="" checked v-model="item.select" value="item.name">
+                    </div>
+                    <a href="#"><img :src="item.img" alt=""></a>
+                    <div class="cart-box-list-title">
+                        <p style="color:#333;fontSize:14px;marginTop:30px">{{item.carttitle1}}</p>
+                        <p style="color:#666;fontSize:12px">{{item.carttitle2}}</p>
+                        <div class="fenqi">分期免息</div>
+                        <div class="price">
+                            <span>¥{{item.price}}元</span>
+                            <div class="priceComputed">
+                                <span class="minus" @click="minus(index)">－</span>
+                                <span style="lineHeight:60px">{{item.cartnum}}</span>
+                                <span class="plus" @click="plus(index)">＋</span>
+                            </div>
                         </div>
+                        <p style="fontSize:14px;lineHeight:28px">
+                            <span style="color:#666">服务</span>
+                            <span class="service"><span>无忧服务</span><span style="marginLeft:15px">碎屏宝</span></span>
+                        </p>
+                        <p style="fontSize:14px;lineHeight:28px">
+                            <span style="color:#666">配</span>
+                            <span style="marginLeft:34px">华为手环3e跑步精灵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x1</span>
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="account">
+            <div class="account" v-if="account">
                 <div class="account-left">
-                    <input type="checkbox" name="" id="" checked style="marginLeft:10px">
+                    <input @change="allselect" type="checkbox" id="" checked style="marginLeft:30px" v-model="$store.state.select">
                     <span style="marginLeft:15px;color:#999">全选</span>
                 </div>
                 <span class="total"><span style="color:black">总计:</span>{{totalPrice}}元</span>
-                <span class="accountall">结算({{cartnum}})</span>
+                <span class="accountall">结算({{Totalcartnum}})</span>
+            </div>
+            <div class="account" v-else>
+                <div class="account-left">
+                    <input @change="allselect1" type="checkbox" value="$store.state.select" id="" checked style="marginLeft:30px" v-model="$store.state.select">
+                    <span style="marginLeft:15px;color:#999">全选</span>
+                </div>
+                <span class="accountall del" @click="dellist">删除</span>
             </div>
         </div>
         <div class="cart-box" v-else>
@@ -42,10 +63,12 @@
                 <div class="cart-content-mid-sale-content">
                     <ul>
                         <li v-for="(item,index) in cartlist" :key="index">
-                            <img :src="item.img" alt="">
+                            <img :src="item.img" alt="" @click="godetail(index)">
                             <p style="fontSize:14px">{{item.title}}</p>
                             <p style="color:#ca141d;fontWeight:700;">{{item.price}}</p>
-                            <a href="#" @click="goshopping(index)">购</a>
+                            <a href="#" @click="goshopping(item)" class="buy">
+                                <img src="../assets/Cartimg/carticon.png" alt="">
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -55,88 +78,204 @@
 </template>
 
 <script>
+import Vue from "vue"
+import Vuex from "vuex"
+Vue.use(Vuex)
+import store from "../store/index.js"
 export default {
+    computed:{
+        shoplist(){
+            return this.$store.state.shoplist;
+        },
+        Totalcartnum(){
+            return this.$store.state.Totalcartnum;
+        },
+        totalPrice(){
+            return this.$store.state.totalPrice;
+        },
+        cartlist(){
+            return this.$store.state.cartlist;
+        },
+        detaillist(){
+            return this.$store.state.detaillist;
+        },
+        edit(){
+            return this.$store.state.edit;
+        },
+        select(){
+            return this.$store.state.select;
+        },
+        account(){
+            return this.$store.state.account;
+        },
+        /* detailindex(){
+            return this.$store.state.detailindex;
+        }, */
+    },
     data(){
         return{
-            cartlist:[
-                {
-                    "img":require("../assets/Cartimg/cartimg1.png"),
-                    "title":"HUAWEI P40 Pro",
-                    "price":6488,
-                    "carttitle1":"HUAWEI P40 Pro 5G 全网通 8GB+256GB（零度白）",
-                    "carttitle2":" 零度白,5G全网通 8GB+256GB,官方标配"
-                },
-                {
-                    "img":require("../assets/Cartimg/cartimg1.png"),
-                    "title":"HUAWEI P40 Pro",
-                    "price":1488,
-                    "carttitle1":"HUAWEI P40 Pro 5G 全网通 8GB+256GB（零度白）",
-                    "carttitle2":" 零度白,5G全网通 8GB+256GB,官方标配"
-                },
-                {
-                    "img":require("../assets/Cartimg/cartimg1.png"),
-                    "title":"HUAWEI P40 Pro",
-                    "price":2488,
-                    "carttitle1":"HUAWEI P40 Pro 5G 全网通 8GB+256GB（零度白）",
-                    "carttitle2":" 零度白,5G全网通 8GB+256GB,官方标配"
-                },
-                {
-                    "img":require("../assets/Cartimg/cartimg1.png"),
-                    "title":"HUAWEI P40 Pro",
-                    "price":3488,
-                    "carttitle1":"HUAWEI P40 Pro 5G 全网通 8GB+256GB（零度白）",
-                    "carttitle2":" 零度白,5G全网通 8GB+256GB,官方标配"
-                },
-                {
-                    "img":require("../assets/Cartimg/cartimg1.png"),
-                    "title":"HUAWEI P40 Pro",
-                    "price":4488,
-                    "carttitle1":"HUAWEI P40 Pro 5G 全网通 8GB+256GB（零度白）",
-                    "carttitle2":" 零度白,5G全网通 8GB+256GB,官方标配"
-                },
-                {
-                    "img":require("../assets/Cartimg/cartimg1.png"),
-                    "title":"HUAWEI P40 Pro",
-                    "price":5488,
-                    "carttitle1":"HUAWEI P40 Pro 5G 全网通 8GB+256GB（零度白）",
-                    "carttitle2":" 零度白,5G全网通 8GB+256GB,官方标配"
-                }
-            ],
-            shoplist:[],
-            cartnum:1,
-            totalPrice:0
+            /* edit:true,
+            select:true,
+            account:true */
         }
     },
     methods:{
         gohome(){
             this.$router.push('/home')
         },
-        goshopping(index){
-            this.shoplist.push(this.cartlist[index])
-            console.log(this.shoplist);
-            this.totalPrice=this.cartnum*this.cartlist[index].price
+        goback(){
+            this.$router.go(-1)
         },
-        clear(){
-            this.shoplist=[]
-            console.log(this.shoplist.length);
+        goshopping(item){
+            this.$store.commit("goshopping",item);
+        },
+
+        dellist(){
+            this.$store.commit("dellist");
+            this.updateprice()
         },
         minus(index){
-            if(this.cartnum>1){
-                this.cartnum--
-            }else{
-                this.cartnum=1
-            }
-            this.totalPrice=this.cartnum*this.cartlist[index].price
+            this.$store.commit("minus",index);
         },
         plus(index){
-            this.cartnum++;
-            this.totalPrice=this.cartnum*this.cartlist[index].price
+            this.$store.commit("plus",index);
         },
+        godetail(index){
+            this.$router.push('/detail');
+            this.detaillist.push(this.cartlist[index])
+            // this.$store.state.detaillist.splice(index,1);
+            this.$store.state.detailindex = index
+        },
+        editcart(){
+            this.$store.commit("editcart");
+        },
+        finish(){
+            this.$store.commit("finish");
+        },
+
+        updateprice(){
+            this.$store.commit("updateprice");
+        },
+
+        allselect(){
+            if(this.$store.state.select){
+                for(let i = 0;i < this.shoplist.length;i++){
+                    this.shoplist[i].select = true;
+                }
+
+                //更新价格和数量
+                this.$store.state.totalPrice = 0;
+                for(let i = 0;i < this.shoplist.length;i++){
+                    this.$store.state.totalPrice += this.shoplist[i].cartnum*this.shoplist[i].price
+                }
+
+                this.$store.state.Totalcartnum = 0;
+                for(let i = 0;i < this.shoplist.length;i++){
+                    this.$store.state.Totalcartnum += this.shoplist[i].cartnum
+                }
+                //=========
+            }else{
+                for(let i = 0;i < this.shoplist.length;i++){
+                    this.shoplist[i].select = false;
+                }
+                this.$store.state.Totalcartnum=0;
+                this.$store.state.totalPrice=0
+            }
+            console.log(this.$store.state.select);
+            // this.$store.commit("allselect");
+        },
+
+        allselect1(){
+            if(this.$store.state.select){
+                for(let i = 0;i < this.shoplist.length;i++){
+                    this.shoplist[i].select = true;
+                }
+            }else{
+                for(let i = 0;i < this.shoplist.length;i++){
+                    this.shoplist[i].select = false;
+                }
+            }
+        },
+
+        updateselect(){
+            let flag = true;
+            for(let i = 0;i < this.shoplist.length;i++){
+                if(this.shoplist[i].select==false){
+                    flag = false
+                    break
+                }
+            }
+
+            if(flag){
+                this.$store.state.select=true
+            }else{
+                this.$store.state.select=false
+            }
+
+            //更新总价和数量
+            this.$store.state.totalPrice = 0;
+            for(let i = 0;i < this.shoplist.length;i++){
+                if(this.shoplist[i].select){
+                    this.$store.state.totalPrice += this.shoplist[i].cartnum*this.shoplist[i].price
+                }
+            }
+            this.$store.state.Totalcartnum = 0;
+            for(let i = 0;i < this.shoplist.length;i++){
+                if(this.shoplist[i].select){
+                    this.$store.state.Totalcartnum += this.shoplist[i].cartnum
+                }
+            }
+            //========
+
+        }
+
     },
+    /* created(){
+        let that = this;
+        that.updateselect()
+    } */
 }
 </script>
 
 <style scoped>
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 18px;
+    margin-right: 10px;
+    position: relative;
+}
+ 
+input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+}
+ 
+input[type="checkbox"]:checked::before {
+    content: "\2713";
+    background-color: rgb(202, 20, 29);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 1px solid #7D7D7D;
+    border-radius:4px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
 .cart-content{
     width: 100%;
     height: 100%;
@@ -146,6 +285,7 @@ export default {
 .cart-box,.cart-box1{
     width: 100%;
     height: 100%;
+    overflow: auto;
 }
 
 .cart-box1{
@@ -153,13 +293,22 @@ export default {
     position: relative;
 }
 
-.cart-content-head{
+.cart-content-head,.cart-content-head1{
     width: 100%;
     height: 8%;
     text-align: center;
     line-height: 46px;
     font-size: 20px;
     background-color: white;
+    position: relative;
+}
+
+.cart-content-head1>div{
+    position: absolute;
+    right: 8%;
+    top: 4px;
+    font-size: 18px;
+    color: #888;
 }
 
 .cart-content-mid{
@@ -217,7 +366,7 @@ export default {
     border-radius: 20px;
     background-color: white;
     box-sizing: border-box;
-    margin: 5px 5px 5px 5px;
+    margin: 4px 4px 4px 4px;
     position: relative;
 }
 
@@ -246,7 +395,7 @@ li>p{
 
 .cart-box-list{
     width: 95%;
-    height: 244px;
+    height: 260px;
     margin: 0 auto;
     border-radius: 20px;
     background-color: white;
@@ -332,9 +481,10 @@ li>p{
     height: 60px;
     background-color: white;
     position: absolute;
-    bottom: 0;
+    bottom: 58.88px;
     display: flex;
     line-height: 60px;
+    position: fixed;
 }
 
 .account-left{
@@ -356,10 +506,44 @@ li>p{
     margin-left: 10px;
 }
 
+.del{
+    margin-left: 30%;
+    background-color: white;
+    color: black;
+    border: 1px solid rgba(51,51,51,.3);
+}
+
 .total{
     text-align: right;
     width: 30%;
     color: #ca141d;
     font-size: 18px;
+}
+
+.buy{
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    text-align: center;
+    line-height: 27px;
+}
+
+.buy img{
+    width: 24px;
+    height: 24px;
+}
+
+.service{
+    margin-left: 20px;
+}
+
+.service>span{
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+    border: solid 0.5px #b2b3b4;
+    color: #333;
+    padding: 0 5px;
+    text-align: center;
 }
 </style>
