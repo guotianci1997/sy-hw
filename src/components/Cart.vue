@@ -65,7 +65,7 @@
                         <li v-for="(item,index) in cartlist" :key="index">
                             <img :src="item.img" alt="" @click="godetail(index)">
                             <p style="fontSize:14px">{{item.title}}</p>
-                            <p style="color:#ca141d;fontWeight:700;">{{item.price}}</p>
+                            <p style="color:#ca141d;fontWeight:700;">¥{{item.price}}</p>
                             <a href="#" @click="goshopping(item)" class="buy">
                                 <img src="../assets/Cartimg/carticon.png" alt="">
                             </a>
@@ -230,10 +230,14 @@ export default {
         }
 
     },
-    /* created(){
-        let that = this;
-        that.updateselect()
-    } */
+    created(){
+        this.$store.state.edit = true;
+        this.$store.state.select = true;
+        this.$store.state.account = true
+        for(let i = 0;i < this.shoplist.length;i++){
+            this.shoplist[i].select = true
+        }
+    }
 }
 </script>
 

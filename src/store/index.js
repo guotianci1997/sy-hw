@@ -75,7 +75,11 @@ const store = new Vuex.Store({
         detailindex:0,
         edit:true,
         select:true,
-        account:true
+        account:true,
+        denglu:true,
+        jifen:"-",
+        youhui:"-",
+        daijin:"-"
     },
 
     mutations:{

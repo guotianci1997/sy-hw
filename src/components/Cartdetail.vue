@@ -1,8 +1,24 @@
 <template>
   <div class="detail-content">
     <div v-for="(item,index) in detaillist" :key="index" class="detail-content-box">
-      <div class="detail-content-box1">
+      <div class="detail-content-box1" @scroll="showhead">
+        <div class="detail-hiddenbox" v-show="headshow">
+          <span style="fontSize:25px;color:#333" @click="goback">＜</span>
+          <a href="#goods">商品</a>
+          <a href="#comments">评价</a>
+          <a href="#detaildata1">参数</a>
+          <a href="#detaildata2">详情</a>
+          <span class="detail-hiddenbox-span" @click="changerouter">···</span>
+        </div>
+        <div class="changerouter" v-show="changeroute">
+          <div class="changerouter-box" @click="gohome">首页</div>
+          <div class="changerouter-box" @click="gosearch">搜索</div>
+          <div class="changerouter-box" @click="gosort">分类</div>
+          <div class="changerouter-box" @click="gocart">购物车</div>
+          <div class="changerouter-box" @click="gome">我的</div>
+        </div>
         <a href="#" @click="goback" class="backbtn">＜</a>
+        <a href="#" class="sortbox" @click="changerouter">···</a>
         <div class="swiper-box">
           <swiper ref="mySwiper" :options="swiperOptions" class="swiperBox">
             <swiper-slide>
@@ -23,7 +39,7 @@
             <div class="swiper-pagination" slot="pagination"></div>
           </swiper>
         </div>
-        <div class="goods-detail">
+        <div class="goods-detail" id="goods">
           <p
             style="color:#ca141d;fontSize:22px;fontWeight:700;lineHeight:30px;marginTop:15px"
           >¥{{item.price}}</p>
@@ -89,7 +105,7 @@
             </div>
           </div>
         </div>
-        <div class="goods-detail-comments">
+        <div class="goods-detail-comments" id="comments">
           <div class="goods-detail-comments-head">
             <span style="fontWeight:700;marginLeft:20px">用户评价(41136)</span>
             <span style="marginLeft:45%;fontSize:14px">
@@ -112,18 +128,25 @@
               </li>
             </ul>
           </div>
-          <div class="goods-detail-comments-img">
+          <div class="goods-detail-comments-img" id="detaildata1">
             <img src="../assets/Cartimg/cartcomments3.png" alt />
           </div>
-          <div class="goods-detail-comments-img1">
+          <div class="goods-detail-comments-img1" id="detaildata2">
             <img src="../assets/Cartimg/cartcomments4.png" alt />
           </div>
         </div>
       </div>
       <div class="detail-content-bottom">
-        <a href="#">首页</a>
-        <a href="#">客服</a>
-        <a href="#" @click="gocart">购物车{{$store.state.Totalcartnum}}</a>
+        <div class="detail-content-bottom-box" >
+          <img src="../assets/Cartimg/cartdetailimg1.png" alt="">
+        </div>
+        <div class="detail-content-bottom-box">
+          <img src="../assets/Cartimg/cartdetailimg2.png" alt="">
+        </div>
+        <div @click="gocart" class="detail-content-bottom-box">
+          <img src="../assets/Cartimg/cartdetailimg3.png" alt="">
+          <div class="cartnum" v-if="$store.state.Totalcartnum>0">{{$store.state.Totalcartnum}}</div>
+        </div>
         <span @click="goshopping2" class="pushcart">加入购物车</span>
         <span class="gocart">立即购买</span>
       </div>
@@ -151,6 +174,8 @@ export default {
       },
       loop: true,
       autoplay: true,
+      headshow:false,
+      changeroute:false
     };
   },
 
@@ -172,7 +197,7 @@ export default {
   methods: {
     goback() {
       this.$store.state.detaillist = [];
-      this.$router.go(-1);
+      this.$router.push('/cart')
       // console.log(this.$store.state.detailindex);
     },
     goshopping2() {
@@ -187,12 +212,49 @@ export default {
     },
     gocart(){
       this.$router.push('/cart')
+    },
+    gohome(){
+      this.$router.push('/home')
+    },
+    gosearch(){
+      this.$router.push('/search')
+    },
+    gosort(){
+      this.$router.push('/sort')
+    },
+    gome(){
+      this.$router.push('/me')
+    },
+    showhead(event){
+      if(event.target.scrollTop>100){
+        this.headshow=true;
+      }
+      if(event.target.scrollTop<100){
+        this.headshow=false;
+      }
+      this.changeroute = false;
+    },
+    changerouter(){
+      this.changeroute = !this.changeroute
     }
+    
   },
 };
 </script>
 
 <style scoped>
+.detail-content-bottom-title{
+  /* display: inline-block; */
+  width: 100%;
+  height: 50%;
+  font-size: 12px;
+}
+
+.detail-content-bottom-img{
+  width: 100%;
+  height: 50%;
+}
+
 .detail-content {
   width: 100%;
   height: 100%;
@@ -210,7 +272,57 @@ export default {
   position: relative;
 }
 
+.detail-hiddenbox{
+  position: absolute;
+  top: 0;
+  height: 46px;
+  width: 100%;
+  line-height: 46px;
+  background-color: white;
+  z-index: 100;
+  position: fixed;
+}
+
+.detail-hiddenbox span{
+  margin-left: 30px;
+  margin-right: 50px;
+}
+
+.detail-hiddenbox a{
+  display: inline-block;
+  width: 13%;
+  color: #191919;
+  font-size: 17px;
+}
+
+.detail-hiddenbox-span{
+  font-size:30px;
+  color:#333;
+  position: absolute;
+  right: -25px;
+}
+
+.changerouter{
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 120px;
+  height: 235px;
+  background-color: white;
+  z-index: 100;
+  position: fixed;
+}
+
+.changerouter-box{
+  height: 20%;
+  width: 100%;
+  text-align: center;
+  line-height: 47px;
+  border-bottom: 1px solid rgba(213,213,213,.5);
+}
+
 .detail-content-bottom {
+  display: flex;
   height: 8%;
   width: 100%;
   line-height: 58px;
@@ -385,7 +497,7 @@ export default {
 
 .detail-content-bottom span {
   display: inline-block;
-  width: 22%;
+  width: 25%;
   height: 75%;
   margin-top: 7px;
   line-height: 44px;
@@ -395,11 +507,26 @@ export default {
   color: white;
 }
 
-.detail-content-bottom a {
+.detail-content-bottom .detail-content-bottom-box {
   display: inline-block;
   height: 100%;
-  width: 18%;
+  width: 16%;
   text-align: center;
+  position: relative;
+}
+
+.cartnum{
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 15px;
+  font-size: 12px;
+  background-color: #ca141d;
+  position: absolute;
+  top: 0;
+  right: 12px;
+  color: white;
 }
 
 .pushcart {
@@ -422,6 +549,22 @@ export default {
   border-radius: 50%;
   background-color: #7f7f7f;
   left: 20px;
+  top: 20px;
+  z-index: 100;
+  text-align: center;
+  font-size: 25px;
+  line-height: 27.5px;
+  color: white;
+}
+
+.sortbox{
+  position: absolute;
+  display: inline-block;
+  width: 27.5px;
+  height: 27.5px;
+  border-radius: 50%;
+  background-color: #7f7f7f;
+  right: 20px;
   top: 20px;
   z-index: 100;
   text-align: center;

@@ -4,7 +4,8 @@
           <p  class="me-show-p">
           <img src="../assets/Homeimg/me-head-img1.png" alt="">
           </p>
-          <span class="me-show-title" @click="goregister">登录/注册</span>
+          <div class="me-show-title" @click="goregister" v-if="denglu">登录/注册</div>
+          <div class="me-show-title" v-else>138******73</div>
           <div class="me-head-box-img">
               <img src="../assets/Homeimg/me-icon1.png" alt="">
               <img src="../assets/Homeimg/me-icon2.png" alt="">
@@ -15,7 +16,8 @@
         <p class="me-heda-img">
           <img src="../assets/Homeimg/me-head-img1.png" alt />
         </p>
-        <p class="me-head-title" @click="goregister">登录/注册</p>
+        <div class="me-head-title" @click="goregister" v-if="denglu">登录/注册</div>
+        <div class="me-head-title" v-else>138******73</div>
         <p class="me-head-title-content">
           <img src="../assets/Homeimg/me-title-img.png" alt="">
           <span class="title">签到领积分</span>
@@ -29,17 +31,17 @@
     <div class="me-content">
       <div class="me-content-box">
         <div class="me-content-box1">
-          <p>-</p>
+          <p>{{jifen}}</p>
           <span class="me-content-paice">积分</span>
           <span class="wire">|</span>
         </div>
         <div class="me-content-box1">
-          <p>-</p>
+          <p>{{youhui}}</p>
           <span class="me-content-paice">优惠卷</span>
           <span class="wire">|</span>
         </div>
         <div class="me-content-box1">
-          <p>-</p>
+          <p>{{daijin}}</p>
           <span class="me-content-paice">代金卷</span>
         </div>
       </div>
@@ -61,17 +63,17 @@
         <li class="me-bottom-box-li">
           <img src="../assets/Homeimg/me-bottom-img1.png" alt />
           <br />
-          <span class="me-bottom-box-li-price">待付款</span>
+          <span class="me-bottom-box-li-price">待收货</span>
         </li>
         <li class="me-bottom-box-li">
           <img src="../assets/Homeimg/me-bottom-img1.png" alt />
           <br />
-          <span class="me-bottom-box-li-price">待付款</span>
+          <span class="me-bottom-box-li-price">待评价</span>
         </li>
         <li class="me-bottom-box-li">
           <img src="../assets/Homeimg/me-bottom-img1.png" alt />
           <br />
-          <span class="me-bottom-box-li-price">待付款</span>
+          <span class="me-bottom-box-li-price">退换/退款</span>
         </li>
       </ul>
       <div class="home-head-swiper">
@@ -135,10 +137,10 @@
         <img src="https://res.vmallres.com/pimages//pages/picImages/13359661400616695331.jpg" alt />
       </div>
       <div class="me-bottom-recommend-img">
-        <img src="https://res.vmallres.com/pimages//pages/picImages/13359661400616695331.jpg" alt />
+        <img src="https://res.vmallres.com/pimages/pages/dynamicMsg/38395336900613359383.jpg" alt />
       </div>
       <div class="me-bottom-recommend-img wrie">
-        <img src="https://res.vmallres.com/pimages//pages/picImages/13359661400616695331.jpg" alt />
+        <img src="https://res.vmallres.com/pimages/pages/dynamicMsg/92366851010615866329.jpg" alt />
       </div>
     </div>
     <div class="home-bottom-title">
@@ -179,33 +181,33 @@ export default {
         },
         {
           imgsrc: require("../assets/Homeimg/me-bottom-icon-img2.png"),
-          title: "会员频道",
+          title: "邀请有礼",
         },
         {
           imgsrc: require("../assets/Homeimg/me-bottom-icon-img3.png"),
-          title: "会员频道",
+          title: "教育优惠",
         },
         {
           imgsrc: require("../assets/Homeimg/me-bottom-icon-img4.png"),
-          title: "会员频道",
+          title: "优购码",
         },
       ],
       imglist1: [
         {
           imgsrc: require("../assets/Homeimg/me-bottom-icon-img5.png"),
-          title: "会员频道",
+          title: "我的拼团",
         },
         {
           imgsrc: require("../assets/Homeimg/me-bottom-icon-img6.png"),
-          title: "会员频道",
+          title: "收货地址",
         },
         {
           imgsrc: require("../assets/Homeimg/me-bottom-icon-img7.png"),
-          title: "会员频道",
+          title: "预约记录",
         },
         {
           imgsrc: require("../assets/Homeimg/me-bottom-icon-img8.png"),
-          title: "会员频道",
+          title: "企业购",
         },
       ],
       scoshow:false
@@ -227,6 +229,18 @@ export default {
   computed: {
     swiper() {
       return this.$refs.mySwiper.$swiper;
+    },
+    denglu(){
+        return this.$store.state.denglu;
+    },
+    jifen(){
+        return this.$store.state.jifen;
+    },
+    youhui(){
+        return this.$store.state.youhui;
+    },
+    daijin(){
+        return this.$store.state.daijin;
     },
   },
 
@@ -402,6 +416,7 @@ vertical-align: middle;
 li {
   list-style: none;
   margin-top: 10px;
+  text-align: center;
 }
 
 .me-bottom-box-li img {

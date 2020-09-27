@@ -17,7 +17,7 @@
                     <span class="span1">忘记密码</span>
                 </p>
                 <p class="denglu"> 
-                <a href="#" class="a1" @click="dnglu">登录</a><br>
+                <a href="#" class="a1" @click="denglu">登录</a><br>
                 <a href="#" class="a2">注册账号</a>
                 </p>
             </div>
@@ -39,18 +39,22 @@ export default {
         }
     },
     methods:{
-        dnglu(){
+        denglu(){
             if(this.acout==""&&this.pasd==""){
                 alert("请输入账号密码")
             }else if(this.acout=="13838279573"&&this.pasd=="123456"){
                 this.$router.push("/me")
+                this.$store.state.denglu=false;
+                this.$store.state.jifen="0";
+                this.$store.state.youhui="0";
+                this.$store.state.daijin="0.00"
             }else{
-                alert("请输入正确的账号密码")
+                alert("账号13838279573密码123456")
             }
             console.log(this.acout);
             console.log(this.pasd);
         }
-    }
+    },
     
 }
 </script>

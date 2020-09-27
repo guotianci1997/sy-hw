@@ -1,7 +1,7 @@
 <template>
   <div class="search-container">
         <div class="search-container-head">
-            <a href="#" @click="goback">后退</a>
+            <a href="#" @click="goback" class="goback">＜</a>
             <input type="text" class="search-container-head-input" placeholder="FreeBuds Pro">
             <span>搜索</span>
         </div>
@@ -102,5 +102,10 @@ p > span {
   line-height: 25px;
   background-color: #f9f9f9;
   margin-top: 15px;
+}
+
+.goback{
+  color: #333;
+  font-size: 25px;
 }
 </style>

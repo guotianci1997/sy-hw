@@ -12,8 +12,8 @@
           </span>
         </div>
         <div class="home-head-search-right">
-          <img src="../assets/Homeimg/home-huihua-img1.png" alt="" />
-          <span>登录</span>
+          <img src="../assets/Homeimg/home-huihua-img1.png" alt="" @click="gome"/>
+          <span @click="gome">登录</span>
         </div>
       </div>
       <div class="home-head-select">
@@ -39,11 +39,11 @@
         <div class="hidden-box" v-show="showbox">
           <ul class="hidden-topbox">
             <li class="hidden-topbox-zi active"> 推荐</li>
-            <li class="hidden-topbox-zi">推荐</li>
-            <li class="hidden-topbox-zi">推荐</li>
-            <li class="hidden-topbox-zi">推荐 </li>
-            <li class="hidden-topbox-zi">推荐</li>
-            <li class="hidden-topbox-zi">推荐</li>
+            <li class="hidden-topbox-zi">华为专区</li>
+            <li class="hidden-topbox-zi">荣耀专区</li>
+            <li class="hidden-topbox-zi">P40 系列 </li>
+            <li class="hidden-topbox-zi">安心居家</li>
+            <li class="hidden-topbox-zi">拼团</li>
           </ul>
           <div class="hidden-btmbox"></div>
         </div>
@@ -475,7 +475,7 @@
         </div>
       </div>
       <div class="home-mid-phone">
-        <div class="home-mid-phone-content">
+        <div class="home-mid-phone-content" @click="godetail">
           <div class="home-mid-phone-content-top">
             <img
               src="https://res0.vmallres.com/pimages//product/6901443387984/428_428_CA16AD0891C031C45C53FB3909E9FF609CCA6C46C2581A76mp.png"
@@ -494,11 +494,11 @@
             </p>
           </div>
           <div class="home-mid-phone-content-bottom">
-            <p>HUAWEI nova SE 5G</p>
-            <p style="color: #ca141d; fontsize: 14px">¥2399</p>
+            <p style="fontSize: 14px">HUAWEI nova SE 5G</p>
+            <p style="color: #ca141d; fontsize: 14px">¥1999</p>
           </div>
         </div>
-        <div class="home-mid-phone-content">
+        <div class="home-mid-phone-content" @click="godetail">
           <div class="home-mid-phone-content-top">
             <img
               src="https://res0.vmallres.com/pimages//product/6901443388141/428_428_AE2A1F00B7D98D94AAB55AD59800475D6ADFA000C71CA40Fmp.png"
@@ -517,13 +517,13 @@
             </p>
           </div>
           <div class="home-mid-phone-content-bottom">
-            <p>HUAWEI nova SE 5G</p>
+            <p style="fontSize: 14px">荣耀Play4</p>
             <p style="color: #ca141d; fontsize: 14px">¥2399</p>
           </div>
         </div>
       </div>
       <div class="home-mid-phone">
-        <div class="home-mid-phone-content">
+        <div class="home-mid-phone-content" @click="godetail">
           <div class="home-mid-phone-content-top">
             <img
               src="https://res0.vmallres.com/pimages//product/6901443353125/428_428_843D9A399BDE267826C8BE3F0F68A903E015089FCD5087D9mp.png"
@@ -542,11 +542,11 @@
             </p>
           </div>
           <div class="home-mid-phone-content-bottom">
-            <p>HUAWEI nova SE 5G</p>
-            <p style="color: #ca141d; fontsize: 14px">¥2399</p>
+            <p style="fontSize: 14px">HUAWEI Mate 30 5G </p>
+            <p style="color: #ca141d; fontsize: 14px">¥1499</p>
           </div>
         </div>
-        <div class="home-mid-phone-content">
+        <div class="home-mid-phone-content" @click="godetail">
           <div class="home-mid-phone-content-top">
             <img
               src="https://res0.vmallres.com/pimages//product/6972453164742/428_428_DA3EC111518BD3850225AFD2CA0127B75C37A020458A3864mp.png"
@@ -565,8 +565,8 @@
             </p>
           </div>
           <div class="home-mid-phone-content-bottom">
-            <p>HUAWEI nova SE 5G</p>
-            <p style="color: #ca141d; fontsize: 14px">¥2399</p>
+            <p style="fontSize: 14px">荣耀X10 Max 5G</p>
+            <p style="color: #ca141d; fontsize: 14px">¥4499</p>
           </div>
         </div>
       </div>
@@ -665,12 +665,26 @@ export default {
     },
     discover(){
       this.$router.push("/discover");
-    }
+    },
+    gome(){
+      this.$router.push("/me");
+    },
+    godetail(){
+        this.$router.push('/detail');
+        
+        this.detaillist.push(this.cartlist[this.$store.state.detailindex])
+    },
   },
 
   computed: {
     swiper() {
       return this.$refs.mySwiper.$swiper;
+    },
+    detaillist(){
+        return this.$store.state.detaillist;
+    },
+    cartlist(){
+        return this.$store.state.cartlist;
     },
   },
 
@@ -710,7 +724,7 @@ export default {
   position: absolute;
   top: 80px;
   z-index: 100;
-  
+  position: fixed;
 }
 
 .hidden-btmbox{
@@ -1176,6 +1190,15 @@ export default {
   width: 140px;
   height: 140px;
   margin-top: 25px;
+}
+
+.home-mid-phone-content-top>p{
+  display: inline-block;
+  height: 60px;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 30px;
 }
 
 .home-mid-phone-content-bottom {
