@@ -1,6 +1,13 @@
 <template>
     <div class="cart-content">
         <div class="cart-box1" v-if="shoplist.length>0">
+            <div class="boxdel" v-show="hiddendel">
+                <div class="bottom-box" >
+                    <div>确定要删除这件商品嘛</div>
+                    <span @click="xuxiao">取消</span>
+                    <span class="bottom-box-span"  @click="dellist">确定</span>
+                </div>
+            </div>
             <!-- <a href="#" @click="clear">清空</a> -->
             <div class="cart-content-head1">购物车
                 <div href="#" v-if="edit" @click="editcart">编辑</div>
@@ -48,7 +55,7 @@
                     <input @change="allselect1" type="checkbox" value="$store.state.select" id="" checked style="marginLeft:30px" v-model="$store.state.select">
                     <span style="marginLeft:15px;color:#999">全选</span>
                 </div>
-                <span class="accountall del" @click="dellist">删除</span>
+                <span class="accountall del" @click="delshow">删除</span>
             </div>
         </div>
         <div class="cart-box" v-else>
@@ -117,11 +124,12 @@ export default {
             /* edit:true,
             select:true,
             account:true */
+            hiddendel:false
         }
     },
     methods:{
         gohome(){
-            this.$router.push('/home')
+            this.$router.push('/home/01')
         },
         goback(){
             this.$router.go(-1)
@@ -133,6 +141,22 @@ export default {
         dellist(){
             this.$store.commit("dellist");
             this.updateprice()
+            this.hiddendel=false
+        },
+        delshow(){
+            let flag = false;
+            for(let i = 0;i < this.$store.state.shoplist.length;i++){
+                if(this.$store.state.shoplist[i].select==true){
+                    flag = true
+                    break
+                }
+            }
+            if(flag){
+                this.hiddendel=true
+            }
+        },
+        xuxiao(){
+            this.hiddendel=false
         },
         minus(index){
             this.$store.commit("minus",index);
@@ -242,6 +266,44 @@ export default {
 </script>
 
 <style scoped>
+
+.boxdel{
+    width: 100%;
+    height: 100%;
+    background:rgba(51,51,51,0.5);
+    position: absolute;
+    position: fixed;
+    z-index: 100;
+}
+
+.bottom-box{
+    width: 90%;
+    height: 20%;
+    background: white;
+    position: absolute;
+    bottom: 3%;
+    right: 5%;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.bottom-box div{
+    width: 100%;
+    height: 70%;
+    line-height: 550%;
+}
+
+.bottom-box span{
+    display: inline-block;
+    width: 48%;
+    height: 15%;
+}
+
+.bottom-box-span{
+    border-left: 1px solid #f4f4f4;
+    color: #ca141d;
+}
+
 input[type="checkbox"] {
     width: 20px;
     height: 20px;
@@ -283,6 +345,7 @@ input[type="checkbox"]:checked::before {
 .cart-content{
     width: 100%;
     height: 100%;
+    position: relative;
     /* background-color: #f9f9f9; */
 }
 

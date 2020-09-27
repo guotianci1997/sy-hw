@@ -578,6 +578,10 @@ h3 {
   text-align: center;
 }
 
+/* .home-bottom-information-top>img{
+  width: 100%;
+} */
+
 .home-bottom-information-bottom {
   width: 100%;
   height: 115px;

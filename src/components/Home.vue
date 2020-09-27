@@ -1,5 +1,5 @@
 <template>
-  <div class="home-content">
+  <div class="home-content" @scroll="showtop">
     <div class="home-head-fixed">
       <div class="home-head-search">
         <div class="home-head-search-left">
@@ -18,7 +18,7 @@
       </div>
       <div class="home-head-select">
         <div class="home-head-select-left">
-          <a href="#">推荐</a>
+          <a href="#"><span style="borderBottom:2px solid #cc0e11;color:#cc0e11">推荐</span></a>
           <a href="https://msale.vmall.com/huaweizone.html">华为专区</a>
           <a href="https://msale.vmall.com/honor.html">荣耀专区</a>
           <a href="https://msale.vmall.com/pseries.html">P40 系列</a>
@@ -47,8 +47,11 @@
           </ul>
           <div class="hidden-btmbox"></div>
         </div>
+        <a href="#top" class="gohead" v-show="gotop">
+          <img src="../assets/Homeimg/gohead.png" alt="">
+        </a>
     <div class="home-head">
-      <div class="home-head-swiper">
+      <div class="home-head-swiper" id="top">
         <swiper ref="mySwiper" :options="swiperOptions" class="swiperBox">
           <swiper-slide>
             <img
@@ -180,11 +183,11 @@
         <a href="#" class="home-head-more-right" @click="discover">更多</a>
       </div>
       <div class="home-head-sale">
-        <span style="color: #4d4d4d; fontsize: 20px; marginright: 5px"
+        <span style="color: #4d4d4d; fontSize: 18px; marginright: 5px"
           >限时购</span
         >
         <span class="sale-icon"></span>
-        <span style="color: #4d4d4d; fontsize: 20px; marginright: 5px"
+        <span style="color: #4d4d4d; fontSize: 18px; marginright: 5px"
           >{{ hou }}:{{ min }}:{{ sec }}</span
         >
       </div>
@@ -580,7 +583,7 @@
       <div class="home-bottom-information">
         <div class="home-bottom-information-top">
           <img
-            src="../assets/Homeimg/information-title.png"
+            src="../assets/Homeimg/bottom.png"
             alt=""
             style="width: 414px"
           />
@@ -615,7 +618,8 @@ export default {
       min: 0,
       sec: 0,
       showbox:false,
-      hiddenimg:true
+      hiddenimg:true,
+      gotop:false
     }
   },
 
@@ -664,15 +668,23 @@ export default {
       this.hiddenimg=!this.hiddenimg
     },
     discover(){
-      this.$router.push("/discover");
+      this.$router.push("/discover/03");
     },
     gome(){
-      this.$router.push("/me");
+      this.$router.push("/me/05");
     },
     godetail(){
         this.$router.push('/detail');
         
         this.detaillist.push(this.cartlist[this.$store.state.detailindex])
+    },
+    showtop(event){
+      if(event.target.scrollTop>500){
+        this.gotop=true;
+      }
+      if(event.target.scrollTop<500){
+        this.gotop=false;
+      }
     },
   },
 
@@ -764,7 +776,26 @@ export default {
   justify-content: space-around;
 }
 
+.gohead{
+  display: inline-block;
+  width: 52px;
+  height: 52px;
+  background-color: white;
+  position: absolute;
+  right: 20px;
+  bottom: 70px;
+  position: fixed;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 52px;
+  z-index: 100;
+}
 
+.gohead img{
+  width: 35px;
+  height: 35px;
+  margin-top: 10px;
+}
 
 .home-content {
   height: 100%;
@@ -849,7 +880,7 @@ export default {
 
 .home-head-search-right span {
   display: inline-block;
-  margin-left: 20%;
+  margin-left: 10%;
 }
 
 .home-mid {

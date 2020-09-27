@@ -1,6 +1,6 @@
 <template>
-  <div class="discover">
-    <div class="discover-head">
+  <div class="discover" @scroll="showtop">
+    <div class="discover-head" id="top">
       <h2>发现频道</h2>
       <ul class="discover-head-ul">
         <li class="discover-head-li">
@@ -76,18 +76,29 @@
       </li>
     </ul>
     </div>
-
-    <div class="discover-conent">
-       
-    </div>
+    <a href="#top" class="gohead" v-show="gotop">
+        <img src="../assets/Homeimg/gohead.png" alt="">
+    </a>
   </div>
 </template>
 
 <script>
 export default {
   data() {
-    return {};
+    return {
+      gotop:false
+    };
   },
+  methods:{
+    showtop(event){
+      if(event.target.scrollTop>500){
+        this.gotop=true;
+      }
+      if(event.target.scrollTop<500){
+        this.gotop=false;
+      }
+    },
+  }
 };
 </script>
 
@@ -98,6 +109,7 @@ export default {
   background: #f9f9f9;
   overflow: auto;
   text-align: center;
+  position: relative;
 }
 
 .discover-head {
@@ -200,6 +212,27 @@ h2 {
 
 .journalism-img{
     margin:20px auto;
+}
+
+.gohead{
+  display: inline-block;
+  width: 52px;
+  height: 52px;
+  background-color: white;
+  position: absolute;
+  right: 20px;
+  bottom: 70px;
+  position: fixed;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 52px;
+  z-index: 100;
+}
+
+.gohead img{
+  width: 35px;
+  height: 35px;
+  margin-top: 10px;
 }
 
 </style>

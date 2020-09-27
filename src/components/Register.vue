@@ -43,7 +43,7 @@ export default {
             if(this.acout==""&&this.pasd==""){
                 alert("请输入账号密码")
             }else if(this.acout=="13838279573"&&this.pasd=="123456"){
-                this.$router.push("/me")
+                this.$router.push("/me/05")
                 this.$store.state.denglu=false;
                 this.$store.state.jifen="0";
                 this.$store.state.youhui="0";

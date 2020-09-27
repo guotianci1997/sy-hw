@@ -16,13 +16,13 @@ const routes = [
     {
         path: "/",
         component: Root,
-        redirect: '/home',
+        redirect: '/home/01',
         children: [
-            { path: '/home', component: Home },
-            { path: '/sort', component: Sort},
-            { path: '/discover', component: Discover },
-            { path: '/cart', component: Cart },
-            { path: '/me', component: Me }
+            { path: '/home/:id', component: Home },
+            { path: '/sort/:id', component: Sort},
+            { path: '/discover/:id', component: Discover },
+            { path: '/cart/:id', component: Cart },
+            { path: '/me/:id', component: Me }
         ]
     },
     {

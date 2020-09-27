@@ -137,7 +137,7 @@
         </div>
       </div>
       <div class="detail-content-bottom">
-        <div class="detail-content-bottom-box" >
+        <div class="detail-content-bottom-box" @click="gohome">
           <img src="../assets/Cartimg/cartdetailimg1.png" alt="">
         </div>
         <div class="detail-content-bottom-box">
@@ -197,7 +197,7 @@ export default {
   methods: {
     goback() {
       this.$store.state.detaillist = [];
-      this.$router.push('/cart')
+      this.$router.go(-1)
       // console.log(this.$store.state.detailindex);
     },
     goshopping2() {
@@ -211,19 +211,19 @@ export default {
         } */
     },
     gocart(){
-      this.$router.push('/cart')
+      this.$router.push('/cart/04')
     },
     gohome(){
-      this.$router.push('/home')
+      this.$router.push('/home/01')
     },
     gosearch(){
-      this.$router.push('/search')
+      this.$router.push('/search/03')
     },
     gosort(){
-      this.$router.push('/sort')
+      this.$router.push('/sort/02')
     },
     gome(){
-      this.$router.push('/me')
+      this.$router.push('/me/05')
     },
     showhead(event){
       if(event.target.scrollTop>100){

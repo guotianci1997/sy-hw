@@ -13,27 +13,27 @@
       </div>
       <div class="sort-right">
           <div class="sort-right-content" v-for="(item,index) in contentlist" :key="index" v-show="index==num">
-              <div class="sort-right-content-headimg">
-                <img :src="item.headimg" alt="">
-              </div>
-              <div class="sort-right-content-headimg">
-                <img :src="item.headimg1" alt="">
-              </div>
-              <div class="sort-right-content-title">{{item.name}}</div>
-              <div class="sort-right-content-box">
-                  <div class="sort-right-content-img" v-for="(item,index) in item.contentimg" :key="index" @click="gocart(index)">
-                      <img :src="item.img" alt="" @click="godetail(index)">
-                      <p style="fontSize:13px;color:#666">{{item.title}}</p>
-                  </div>
-              </div>
-              <div class="sort-right-content-title">{{item.name1}}</div>
-              <div class="sort-right-content-box">
-                  <div class="sort-right-content-img" v-for="(item,index) in item.contentimg1" :key="index" @click="gocart(index)">
-                      <img :src="item.img" alt="" @click="godetail(index)">
-                      <p style="fontSize:13px;color:#666">{{item.title}}</p>
-                  </div>
-              </div>
-          </div>
+            <div class="sort-right-content-headimg">
+              <img :src="item.headimg" alt="">
+            </div>
+            <div class="sort-right-content-headimg">
+              <img :src="item.headimg1" alt="">
+            </div>
+            <div class="sort-right-content-title">{{item.name}}</div>
+            <div class="sort-right-content-box">
+                <div class="sort-right-content-img" v-for="(item,index) in item.contentimg" :key="index" @click="gocart(index)">
+                    <img :src="item.img" alt="" @click="godetail(index)">
+                    <p style="fontSize:13px;color:#666">{{item.title}}</p>
+                </div>
+            </div>
+            <div class="sort-right-content-title">{{item.name1}}</div>
+            <div class="sort-right-content-box">
+                <div class="sort-right-content-img" v-for="(item,index) in item.contentimg1" :key="index" @click="gocart(index)">
+                    <img :src="item.img" alt="" @click="godetail(index)">
+                    <p style="fontSize:13px;color:#666">{{item.title}}</p>
+                </div>
+            </div>
+        </div>
       </div>
     </div>
   </div>
